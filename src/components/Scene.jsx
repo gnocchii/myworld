@@ -4,8 +4,8 @@ import { Suspense } from 'react'
 
 function Scene() {
   return (
-    <div style={{ width: '100%', height: '100vh', background: 'linear-gradient(to bottom, #f0f4f8, #e1e8ed)' }}>
-      <Canvas>
+    <div style={{ width: '100%', height: '100vh' }}>
+      <Canvas gl={{ alpha: true }} style={{ background: 'transparent' }}>
         <Suspense fallback={null}>
           <PerspectiveCamera makeDefault position={[0, 0, 6]} />
           <ambientLight intensity={0.6} />

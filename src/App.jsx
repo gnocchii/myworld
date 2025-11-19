@@ -1,5 +1,6 @@
 import Scene from './components/Scene'
 import Dock from './components/Dock'
+import CDPlayer from './components/CDPlayer'
 import './App.css'
 
 function App() {
@@ -8,16 +9,15 @@ function App() {
       <Scene />
 
       <div className="overlay">
-        <div className="branding">
-          <span className="melody-text">melody</span>
-        </div>
+        <CDPlayer />
 
         <Dock />
 
         <main className="content">
-          <section className="hero">
-            <p>Building interactive 3D experiences on the web</p>
-          </section>
+          <div className="hero-title">
+            <h1>Melody Yang</h1>
+            <p>MULTIDISCIPLINARY DESIGNER DEDICATED TO CRAFTING DELIGHTFUL DIGITAL EXPERIENCES</p>
+          </div>
         </main>
       </div>
     </div>
