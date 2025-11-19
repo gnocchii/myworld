@@ -15,7 +15,7 @@ function Box() {
 
 function Scene() {
   return (
-    <div style={{ width: '100%', height: '100vh', background: '#0f172a' }}>
+    <div style={{ position: 'fixed', top: 0, left: 0, width: '100%', height: '100vh', background: '#0f172a', zIndex: 0 }}>
       <Canvas>
         <Suspense fallback={null}>
           <PerspectiveCamera makeDefault position={[0, 0, 6]} />

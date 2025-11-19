@@ -1,0 +1,174 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+.dock-container {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  pointer-events: none;
+}
+
+.dock-branding {
+  pointer-events: auto;
+  align-self: flex-start;
+  margin-left: 20px;
+}
+
+.cursive-name {
+  font-family: 'Pacifico', cursive;
+  font-size: 1.8rem;
+  color: #f1f5f9;
+  text-shadow: 0 2px 8px rgba(99, 102, 241, 0.3);
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+.dock-nav {
+  display: flex;
+  gap: 8px;
+  background: rgba(15, 23, 42, 0.8);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 12px 16px;
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.4),
+    0 0 0 1px rgba(255, 255, 255, 0.05);
+  pointer-events: auto;
+}
+
+.dock-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 12px 16px;
+  color: #cbd5e1;
+  text-decoration: none;
+  background: transparent;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.75rem;
+  font-weight: 500;
+  position: relative;
+}
+
+.dock-item svg {
+  width: 24px;
+  height: 24px;
+  transition: transform 0.3s ease;
+}
+
+.dock-item span {
+  white-space: nowrap;
+}
+
+.dock-item:hover {
+  background: rgba(99, 102, 241, 0.1);
+  color: #6366f1;
+  transform: translateY(-4px);
+}
+
+.dock-item:hover svg {
+  transform: scale(1.1);
+}
+
+.theme-toggle {
+  margin-left: 8px;
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+  padding-left: 20px;
+}
+
+/* Light mode styles */
+body.light-mode {
+  background-color: #f8fafc;
+  color: rgba(15, 23, 42, 0.87);
+}
+
+body.light-mode .dock-nav {
+  background: rgba(255, 255, 255, 0.8);
+  border-color: rgba(15, 23, 42, 0.1);
+}
+
+body.light-mode .dock-item {
+  color: #475569;
+}
+
+body.light-mode .dock-item:hover {
+  background: rgba(99, 102, 241, 0.1);
+  color: #6366f1;
+}
+
+body.light-mode .cursive-name {
+  color: #1e293b;
+  text-shadow: 0 2px 8px rgba(99, 102, 241, 0.2);
+}
+
+body.light-mode .metallic-name {
+  background: linear-gradient(
+    145deg,
+    #1e293b 0%,
+    #475569 20%,
+    #334155 40%,
+    #64748b 50%,
+    #475569 60%,
+    #1e293b 70%,
+    #334155 85%,
+    #475569 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .dock-nav {
+    gap: 4px;
+    padding: 10px 12px;
+    border-radius: 16px;
+  }
+
+  .dock-item {
+    padding: 10px 12px;
+    font-size: 0.7rem;
+  }
+
+  .dock-item svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .cursive-name {
+    font-size: 1.4rem;
+  }
+
+  .dock-branding {
+    margin-left: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .dock-item span {
+    display: none;
+  }
+
+  .dock-item {
+    padding: 10px;
+  }
+
+  .dock-nav {
+    padding: 8px 10px;
+  }
+
+  .cursive-name {
+    font-size: 1.2rem;
+  }
+}
