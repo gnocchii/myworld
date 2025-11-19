@@ -5,7 +5,7 @@ import crumbling from "../assets/crumbling.png";
 import aphex from "../assets/aphex.jpg";
 
 
-// Sample songs data - you can customize these!
+// yummy!!
 const allSongs = [
   {
     title: "Song 1",
