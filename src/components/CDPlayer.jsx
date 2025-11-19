@@ -2,10 +2,10 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
 import cascade from "../assets/cascade.jpg";
 import crumbling from "../assets/crumbling.png";
-import aphex from "../assets/aphex.jpg";
+import aphex_twin from "../assets/aphex.jpg";
 
 
-// yummy!!
+// yummy!
 const allSongs = [
   {
     title: "Song 1",
@@ -22,7 +22,7 @@ const allSongs = [
   {
     title: "Song 3",
     artist: "Artist 3",
-    image: aphex,
+    image: aphex_twin,
     alt: "Album Art 3"
   }
 ];
