@@ -1,29 +1,16 @@
 import { Canvas } from '@react-three/fiber'
-import { OrbitControls, PerspectiveCamera, Float } from '@react-three/drei'
+import { OrbitControls, PerspectiveCamera } from '@react-three/drei'
 import { Suspense } from 'react'
-
-function Box() {
-  return (
-    <Float speed={1.5} rotationIntensity={1} floatIntensity={2}>
-      <mesh>
-        <boxGeometry args={[2, 2, 2]} />
-        <meshStandardMaterial color="#6366f1" metalness={0.3} roughness={0.4} />
-      </mesh>
-    </Float>
-  )
-}
 
 function Scene() {
   return (
-    <div style={{ width: '100%', height: '100vh', background: '#0f172a' }}>
+    <div style={{ width: '100%', height: '100vh', background: 'linear-gradient(to bottom, #f0f4f8, #e1e8ed)' }}>
       <Canvas>
         <Suspense fallback={null}>
           <PerspectiveCamera makeDefault position={[0, 0, 6]} />
-          <ambientLight intensity={0.5} />
-          <directionalLight position={[10, 10, 5]} intensity={1} />
-          <pointLight position={[-10, -10, -5]} intensity={0.5} color="#7c3aed" />
-
-          <Box />
+          <ambientLight intensity={0.6} />
+          <directionalLight position={[10, 10, 5]} intensity={0.8} />
+          <pointLight position={[-10, -10, -5]} intensity={0.3} color="#a8c5d1" />
 
           <OrbitControls
             enableZoom={true}
@@ -33,7 +20,7 @@ function Scene() {
           />
 
           {/* Grid helper for reference */}
-          <gridHelper args={[10, 10, '#1e293b', '#334155']} />
+          <gridHelper args={[10, 10, '#d4dfe6', '#e8eef2']} />
         </Suspense>
       </Canvas>
     </div>

@@ -1,4 +1,5 @@
 import Scene from './components/Scene'
+import Dock from './components/Dock'
 import './App.css'
 
 function App() {
@@ -7,18 +8,14 @@ function App() {
       <Scene />
 
       <div className="overlay">
-        <header className="header">
-          <h1 className="title">Your Name</h1>
-          <nav className="nav">
-            <a href="#about">About</a>
-            <a href="#projects">Projects</a>
-            <a href="#contact">Contact</a>
-          </nav>
-        </header>
+        <div className="branding">
+          <span className="melody-text">melody</span>
+        </div>
+
+        <Dock />
 
         <main className="content">
           <section className="hero">
-            <h2>Creative Developer</h2>
             <p>Building interactive 3D experiences on the web</p>
           </section>
         </main>
