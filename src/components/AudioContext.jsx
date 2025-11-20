@@ -32,13 +32,13 @@ export function AudioProvider({ children }) {
       image: aphex_twin,
       name: "STARRY NIGHT",
       alt: "Starry Night",
-      audio: "/audios/Starry Night.mp3",
+      audio: "/audios/pulsewidth.mp3",
     },
     {
       image: inr,
       name: "TRACK UNO",
       alt: "Track Uno",
-      audio: "/audios/TRACK UNO.mp3",
+      audio: "/audios/hoc.mp3",
     },
     {
       image: MFDOOM,
@@ -50,7 +50,7 @@ export function AudioProvider({ children }) {
 
   const [status, setStatus] = useState("paused");
   const [isClient, setIsClient] = useState(false);
-  const [currentSongIndex, setCurrentSongIndex] = useState(0);
+  const [currentSongIndex, setCurrentSongIndex] = useState(1);
 
   useEffect(() => {
     setIsClient(true);
@@ -59,6 +59,8 @@ export function AudioProvider({ children }) {
       const savedStatus = localStorage.getItem("audioStatus");
       if (savedIndex) {
         setCurrentSongIndex(parseInt(savedIndex, 10));
+      } else {
+        setCurrentSongIndex(1);
       }
       if (savedStatus) {
         setStatus(savedStatus);
