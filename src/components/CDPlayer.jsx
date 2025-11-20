@@ -1,42 +1,10 @@
 import { motion, AnimatePresence } from "framer-motion";
-import { useState, useEffect } from "react";
-import cascade from "../assets/cascade.jpg";
-import crumbling from "../assets/crumbling.png";
-import aphex_twin from "../assets/aphex.jpg";
-
-
-// yummy!
-const allSongs = [
-  {
-    title: "Song 1",
-    artist: "Artist 1",
-    image: cascade,
-    alt: "Album Art 1"
-  },
-  {
-    title: "Song 2",
-    artist: "Artist 2",
-    image: crumbling,
-    alt: "Album Art 2"
-  },
-  {
-    title: "Song 3",
-    artist: "Artist 3",
-    image: aphex_twin,
-    alt: "Album Art 3"
-  }
-];
+import { useAudio } from "./AudioContext";
 
 function CD() {
-  const [currentSongIndex, setCurrentSongIndex] = useState(0);
-  const [status, setStatus] = useState("paused"); // "playing" or "paused"
+  const { currentSongIndex, setCurrentSongIndex, status, setStatus, allSongs } = useAudio();
   const currentSong = allSongs[currentSongIndex];
   const playing = status === "playing";
-
-  useEffect(() => {
-    // Start with a random song
-    setCurrentSongIndex(Math.floor(Math.random() * allSongs.length));
-  }, []);
 
   const handleNextSong = () => {
     const nextIndex = (currentSongIndex + 1) % allSongs.length;

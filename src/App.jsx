@@ -1,11 +1,13 @@
 import Scene from './components/Scene'
 import Dock from './components/Dock'
 import CDPlayer from './components/CDPlayer'
+import AudioPlayer from './components/AudioPlayer'
 import './App.css'
 
 function App() {
   return (
     <div className="app">
+      <AudioPlayer />
       <Scene />
 
       <div className="overlay">
