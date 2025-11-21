@@ -22,7 +22,7 @@ function CD() {
       height: "225px",
       width: "700px",
       left: "50%",
-      top: "-20%",
+      bottom: "15%",
       transform: "translateX(-50%)",
       zIndex: 50,
       pointerEvents: "none"
@@ -33,7 +33,7 @@ function CD() {
           playing
             ? {
                 rotate: 360,
-                y: [0, -45],
+                y: [0, 45],
                 transition: {
                   rotate: {
                     ease: "linear",
@@ -59,8 +59,8 @@ function CD() {
           setStatus(status === "playing" ? "paused" : "playing");
         }}
         style={{
-          width: "425px",
-          height: "425px",
+          width: "475px",
+          height: "475px",
           position: "absolute",
           left: "50%",
           zIndex: 20,
@@ -230,9 +230,9 @@ function CD() {
         style={{
           position: "absolute",
           display: "flex",
-          bottom: "0%",
+          top: "100%",
           left: "50%",
-          transform: "translate(-50%, 82px)",
+          transform: "translate(-50%, -100px)",
           gap: "500px",
         }}
       >

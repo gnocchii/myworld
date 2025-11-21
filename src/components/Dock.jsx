@@ -1,35 +1,80 @@
-import { useState } from 'react'
-import './Dock.css'
-
-function Dock() {
-  const [hoveredIndex, setHoveredIndex] = useState(null)
-
-  const dockItems = [
-    { id: 'about', label: 'About', icon: '👤' },
-    { id: 'projects', label: 'Projects', icon: '💼' },
-    { id: 'skills', label: 'Skills', icon: '⚡' },
-    { id: 'contact', label: 'Contact', icon: '✉️' },
-  ]
-
+function Dock({ currentPage, setCurrentPage }) {
   return (
-    <div className="dock-container">
-      <div className="dock">
-        {dockItems.map((item, index) => (
-          <div
-            key={item.id}
-            className={`dock-item ${hoveredIndex === index ? 'hovered' : ''}`}
-            onMouseEnter={() => setHoveredIndex(index)}
-            onMouseLeave={() => setHoveredIndex(null)}
-          >
-            <div className="dock-item-content">
-              <span className="dock-icon">{item.icon}</span>
-            </div>
-            <span className="dock-label">{item.label}</span>
-          </div>
-        ))}
-      </div>
-    </div>
-  )
+    <nav style={{
+      position: 'fixed',
+      top: '2rem',
+      left: '50%',
+      transform: 'translateX(-50%)',
+      zIndex: 100,
+      display: 'flex',
+      gap: '2rem',
+      fontFamily: "'Roboto Mono', monospace",
+      fontWeight: 300,
+      fontSize: '1rem',
+      color: '#272622',
+    }}>
+      <a
+        href="#home"
+        onClick={(e) => {
+          e.preventDefault();
+          setCurrentPage('home');
+        }}
+        style={{
+          color: 'inherit',
+          textDecoration: 'none',
+          transition: 'opacity 0.2s',
+          cursor: 'pointer',
+        }}
+        onMouseEnter={(e) => e.target.style.opacity = '0.6'}
+        onMouseLeave={(e) => e.target.style.opacity = '1'}
+      >
+        home
+      </a>
+      <a
+        href="#work"
+        style={{
+          color: 'inherit',
+          textDecoration: 'none',
+          transition: 'opacity 0.2s',
+          cursor: 'pointer',
+        }}
+        onMouseEnter={(e) => e.target.style.opacity = '0.6'}
+        onMouseLeave={(e) => e.target.style.opacity = '1'}
+      >
+        work
+      </a>
+      <a
+        href="#play"
+        style={{
+          color: 'inherit',
+          textDecoration: 'none',
+          transition: 'opacity 0.2s',
+          cursor: 'pointer',
+        }}
+        onMouseEnter={(e) => e.target.style.opacity = '0.6'}
+        onMouseLeave={(e) => e.target.style.opacity = '1'}
+      >
+        play
+      </a>
+      <a
+        href="#about"
+        onClick={(e) => {
+          e.preventDefault();
+          setCurrentPage('about');
+        }}
+        style={{
+          color: 'inherit',
+          textDecoration: 'none',
+          transition: 'opacity 0.2s',
+          cursor: 'pointer',
+        }}
+        onMouseEnter={(e) => e.target.style.opacity = '0.6'}
+        onMouseLeave={(e) => e.target.style.opacity = '1'}
+      >
+        about
+      </a>
+    </nav>
+  );
 }
 
-export default Dock
+export default Dock;

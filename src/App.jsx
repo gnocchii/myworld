@@ -1,26 +1,66 @@
+import { useState } from 'react'
 import Scene from './components/Scene'
 import Dock from './components/Dock'
 import CDPlayer from './components/CDPlayer'
 import AudioPlayer from './components/AudioPlayer'
+import DraggableSticker from './components/DraggableSticker'
+import About from './components/About'
 import './App.css'
 
 function App() {
+  const [currentPage, setCurrentPage] = useState('home');
+
   return (
     <div className="app">
       <AudioPlayer />
       <Scene />
 
       <div className="overlay">
-        <CDPlayer />
+        <div style={{ display: currentPage === 'home' ? 'block' : 'none' }}>
+          <CDPlayer />
+        </div>
 
-        <Dock />
+        <Dock currentPage={currentPage} setCurrentPage={setCurrentPage} />
 
-        <main className="content">
-          <div className="hero-title">
-            <h1>Melody Yang</h1>
-            <p>MULTIDISCIPLINARY DESIGNER DEDICATED TO CRAFTING DELIGHTFUL DIGITAL EXPERIENCES</p>
-          </div>
-        </main>
+        <div style={{ display: currentPage === 'home' ? 'block' : 'none' }}>
+          <DraggableSticker
+            src="/images/folder-icon copy.webp"
+            width={80}
+            height={80}
+            startX="20%"
+            startY="45%"
+            rotation={-8}
+          />
+
+          <DraggableSticker
+            src="/images/kiko folder.png"
+            width={150}
+            height={150}
+            startX="73%"
+            startY="54%"
+            rotation={8}
+          />
+
+          <DraggableSticker
+            src="/images/letterboxd.svg"
+            width={80}
+            height={80
+
+            }
+            startX="75%"
+            startY="25%"
+            rotation={1}
+          />
+
+          <main className="content">
+            <div className="hero-title">
+              <h1>Melody Yang</h1>
+              <p>MULTIDISCIPLINARY DESIGNER REIMAGINING CREATIVE DIGITAL EXPERIENCES</p>
+            </div>
+          </main>
+        </div>
+
+        {currentPage === 'about' && <About />}
       </div>
     </div>
   )

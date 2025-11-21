@@ -13,10 +13,9 @@ function Scene() {
           <pointLight position={[-10, -10, -5]} intensity={0.3} color="#a8c5d1" />
 
           <OrbitControls
-            enableZoom={true}
+            enableZoom={false}
             enablePan={false}
-            minDistance={3}
-            maxDistance={10}
+            enableRotate={false}
           />
 
           {/* Grid helper for reference */}
