@@ -14,37 +14,6 @@ export default function About() {
         color: '#272622',
         textAlign: 'center',
       }}>
-        
-
-        <div style={{
-          display: 'flex',
-          gap: '2rem',
-          justifyContent: 'center',
-          margin: '2rem 0',
-          flexWrap: 'wrap',
-        }}>
-          <div style={{
-            backgroundColor: 'white',
-            padding: '1rem',
-            paddingBottom: '3rem',
-            boxShadow: '0 4px 6px rgba(0,0,0,0.1)',
-            transform: 'rotate(-5deg)',
-            transition: 'transform 0.3s ease',
-          }}>
-          </div>
-
-          <div style={{
-            backgroundColor: 'white',
-            padding: '1rem',
-            paddingBottom: '3rem',
-            boxShadow: '0 4px 6px rgba(0,0,0,0.1)',
-            transform: 'rotate(5deg)',
-            transition: 'transform 0.3s ease',
-          }}>
-            
-          </div>
-        </div>
-
         <div style={{
           fontSize: '1rem',
           lineHeight: '1.8',
@@ -85,69 +54,6 @@ export default function About() {
             • The best work comes from curiosity and experimentation<br/>
             • Technology is a tool for human connection, not a replacement for it
           </p>
-
-          <div style={{
-            display: 'flex',
-            justifyContent: 'center',
-            gap: '2rem',
-            marginTop: '2rem',
-            flexWrap: 'wrap',
-          }}>
-            <a
-              href="https://instagram.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{
-                color: '#4A90E2',
-                textDecoration: 'none',
-                transition: 'opacity 0.2s',
-              }}
-              onMouseEnter={(e) => e.target.style.opacity = '0.6'}
-              onMouseLeave={(e) => e.target.style.opacity = '1'}
-            >
-              Instagram
-            </a>
-            <a
-              href="mailto:hello@melody.com"
-              style={{
-                color: '#4A90E2',
-                textDecoration: 'none',
-                transition: 'opacity 0.2s',
-              }}
-              onMouseEnter={(e) => e.target.style.opacity = '0.6'}
-              onMouseLeave={(e) => e.target.style.opacity = '1'}
-            >
-              Email
-            </a>
-            <a
-              href="https://usc.edu"
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{
-                color: '#4A90E2',
-                textDecoration: 'none',
-                transition: 'opacity 0.2s',
-              }}
-              onMouseEnter={(e) => e.target.style.opacity = '0.6'}
-              onMouseLeave={(e) => e.target.style.opacity = '1'}
-            >
-              USC
-            </a>
-            <a
-              href="https://deeplocal.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{
-                color: '#4A90E2',
-                textDecoration: 'none',
-                transition: 'opacity 0.2s',
-              }}
-              onMouseEnter={(e) => e.target.style.opacity = '0.6'}
-              onMouseLeave={(e) => e.target.style.opacity = '1'}
-            >
-              Deeplocal
-            </a>
-          </div>
         </div>
       </div>
     </main>
