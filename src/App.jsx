@@ -4,6 +4,8 @@ import Dock from './components/Dock'
 import CDPlayer from './components/CDPlayer'
 import AudioPlayer from './components/AudioPlayer'
 import DraggableSticker from './components/DraggableSticker'
+import Folder from './components/Folder'
+import LetterboxdFolder from './components/LetterboxdFolder'
 import About from './components/About'
 import './App.css'
 
@@ -23,10 +25,8 @@ function App() {
         <Dock currentPage={currentPage} setCurrentPage={setCurrentPage} />
 
         <div style={{ display: currentPage === 'home' ? 'block' : 'none' }}>
-          <DraggableSticker
-            src="/images/folder-icon copy.webp"
-            width={80}
-            height={80}
+          <Folder
+            title="photos"
             startX="20%"
             startY="45%"
             rotation={-8}
@@ -41,12 +41,7 @@ function App() {
             rotation={8}
           />
 
-          <DraggableSticker
-            src="/images/letterboxd.svg"
-            width={80}
-            height={80
-
-            }
+          <LetterboxdFolder
             startX="75%"
             startY="25%"
             rotation={1}
