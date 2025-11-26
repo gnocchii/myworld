@@ -12,31 +12,31 @@ export function AudioProvider({ children }) {
   const allSongs = [
     {
       image: nujabes,
-      name: "BEAT LAMENTS THE WORLD",
+      name: "WORLD WITHOUT WORDS",
       alt: "Nujabes",
       audio: "/audios/world without words.mp3",
     },
     {
       image: cascade,
-      name: "Fast Forward",
+      name: "FAST FORWARD",
       alt: "Crush",
       audio: "/audios/Fast Forward.mp3",
     },
     {
       image: crumbling,
-      name: "Dirt",
+      name: "DIRT",
       alt: "Dirt",
       audio: "/audios/Dirt.mp3",
     },
     {
       image: aphex_twin,
-      name: "STARRY NIGHT",
+      name: "PULSEWIDTH",
       alt: "Starry Night",
       audio: "/audios/pulsewidth.mp3",
     },
     {
       image: inr,
-      name: "TRACK UNO",
+      name: "HOUSE OF CARDS",
       alt: "Track Uno",
       audio: "/audios/hoc.mp3",
     },

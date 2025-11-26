@@ -27,6 +27,23 @@ function CD() {
       zIndex: 50,
       pointerEvents: "none"
     }}>
+      {/* Status display */}
+      <div style={{
+        position: "absolute",
+        top: "-60px",
+        left: "50%",
+        transform: "translateX(-50%)",
+        fontFamily: "'Roboto Mono', monospace",
+        fontSize: "0.9rem",
+        color: "#272622",
+        fontWeight: 300,
+        textAlign: "center",
+        whiteSpace: "nowrap",
+      }}>
+        {playing ? "NOW PLAYING: " : "CLICK TO PLAY: "}
+        <span style={{ fontWeight: 400 }}>{currentSong.name}</span>
+      </div>
+
       <motion.div
         initial={{ rotate: 0, x: "-50%", borderRadius: 250 }}
         animate={
