@@ -10,20 +10,7 @@ export default function Folder({ title, startX, startY, rotation = 0 }) {
 
   const photos = [
     {
-      text: "Neighhh.",
-      image: "/images/folder/horsey.webp",
-    },
-    {
-      text: "Mount Ye (ji)",
-      image: "/images/folder/mountYe.webp",
-    },
-    {
-      text: "LA shenanigans!",
-      image: "/images/folder/coolStore.webp",
-    },
-    {
-      text: "Djing..",
-      image: "/images/folder/djing.webp",
+      text: "nothing yet!"
     },
   ];
 
