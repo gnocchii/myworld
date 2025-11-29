@@ -53,11 +53,11 @@
 
 .hero-title h1 {
   font-family: 'Roboto Mono', monospace;
-  font-weight: 300;
-  font-size: 3.5rem;
+  font-weight: 700;
+  font-size: 5.5rem;
   color: #272622;
   margin: 0 0 1rem 0;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.08em;
 }
 
 .hero-title p {

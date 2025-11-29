@@ -10,21 +10,21 @@ export default function LetterboxdFolder({ startX, startY, rotation = 0 }) {
 
   const items = [
     {
-      text: "Favorite Film 1",
-      image: "/images/letterboxd/film1.webp",
+      text: "It's Such A Beautiful Day",
+      image: "/images/letterboxd/isabd.webp",
     },
     {
-      text: "Favorite Film 2",
-      image: "/images/letterboxd/film2.webp",
+      text: "Farewell My Concubine",
+      image: "/images/letterboxd/fmc.webp",
     },
     {
-      text: "Favorite Film 3",
-      image: "/images/letterboxd/film3.webp",
+      text: "The Banshees of Inisherin",
+      image: "/images/letterboxd/tboi.webp",
     },
     {
-      text: "Favorite Film 4",
-      image: "/images/letterboxd/film4.webp",
-    },
+      text: "Mulholland Drive",
+      image: "/images/letterboxd/md.jpg",
+    }
   ];
 
   useEffect(() => {
@@ -105,7 +105,7 @@ export default function LetterboxdFolder({ startX, startY, rotation = 0 }) {
           color: '#404040',
           boxShadow: '0 4px 6px rgba(0,0,0,0.1)',
           borderRadius: '6px',
-          width: '288px',
+          width: '240px',
           transition: 'all 0.2s ease',
           transform: isOpen ? 'scale(1)' : 'scale(0)',
           opacity: isOpen ? 1 : 0,
@@ -124,14 +124,14 @@ export default function LetterboxdFolder({ startX, startY, rotation = 0 }) {
           }}
         />
 
-        {/* Square images grid */}
+        {/* Movie poster images grid */}
         <div
           style={{
             display: 'flex',
             flexWrap: 'wrap',
-            gap: '1rem 0.25rem',
+            gap: '0.75rem 0.5rem',
             fontFamily: 'sans-serif',
-            fontSize: '0.75rem',
+            fontSize: '0.6rem',
             margin: '1.5rem 0',
             padding: '0 0.5rem',
             justifyContent: 'center',
@@ -149,23 +149,24 @@ export default function LetterboxdFolder({ startX, startY, rotation = 0 }) {
             >
               <div
                 style={{
-                  height: '100px',
-                  width: '100px',
+                  height: '120px',
+                  width: '80px',
                   backgroundImage: `url(${item.image})`,
                   backgroundSize: 'cover',
                   backgroundPosition: 'center',
-                  marginBottom: '0.5rem',
-                  border: '4px solid white',
-                  borderRadius: '4px',
+                  marginBottom: '0.35rem',
+                  border: '3px solid white',
+                  borderRadius: '3px',
                   boxShadow: '1px 2px 3px rgba(0,0,0,0.2)',
                 }}
               />
               <p
                 style={{
-                  fontSize: '0.75rem',
-                  width: '108px',
+                  fontSize: '0.55rem',
+                  width: '86px',
                   margin: 0,
                   fontFamily: "'Roboto Mono', monospace",
+                  lineHeight: '1.2',
                 }}
               >
                 {item.text}
