@@ -12,18 +12,22 @@ export default function LetterboxdFolder({ startX, startY, rotation = 0 }) {
     {
       text: "It's Such A Beautiful Day",
       image: "/images/letterboxd/isabd.webp",
+      url: "https://letterboxd.com/film/its-such-a-beautiful-day/",
     },
     {
       text: "Farewell My Concubine",
       image: "/images/letterboxd/fmc.webp",
+      url: "https://www.rogerebert.com/reviews/farewell-my-concubine-1993",
     },
     {
       text: "The Banshees of Inisherin",
       image: "/images/letterboxd/tboi.webp",
+      url: "https://www.rogerebert.com/reviews/the-banshees-of-inisherin-film-review-2022",
     },
     {
       text: "Mulholland Drive",
       image: "/images/letterboxd/md.jpg",
+      url: "https://www.rogerebert.com/reviews/mulholland-drive-2001",
     }
   ];
 
@@ -147,19 +151,39 @@ export default function LetterboxdFolder({ startX, startY, rotation = 0 }) {
                 textAlign: 'center',
               }}
             >
-              <div
+              <a
+                href={item.url}
+                target="_blank"
+                rel="noopener noreferrer"
                 style={{
-                  height: '120px',
-                  width: '80px',
-                  backgroundImage: `url(${item.image})`,
-                  backgroundSize: 'cover',
-                  backgroundPosition: 'center',
-                  marginBottom: '0.35rem',
-                  border: '3px solid white',
-                  borderRadius: '3px',
-                  boxShadow: '1px 2px 3px rgba(0,0,0,0.2)',
+                  textDecoration: 'none',
+                  color: 'inherit',
                 }}
-              />
+              >
+                <div
+                  style={{
+                    height: '120px',
+                    width: '80px',
+                    backgroundImage: `url(${item.image})`,
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center',
+                    marginBottom: '0.35rem',
+                    border: '3px solid white',
+                    borderRadius: '3px',
+                    boxShadow: '1px 2px 3px rgba(0,0,0,0.2)',
+                    cursor: 'pointer',
+                    transition: 'transform 0.2s, box-shadow 0.2s',
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.transform = 'scale(1.05)';
+                    e.currentTarget.style.boxShadow = '2px 4px 6px rgba(0,0,0,0.3)';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.transform = 'scale(1)';
+                    e.currentTarget.style.boxShadow = '1px 2px 3px rgba(0,0,0,0.2)';
+                  }}
+                />
+              </a>
               <p
                 style={{
                   fontSize: '0.55rem',
