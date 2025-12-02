@@ -12,7 +12,7 @@ export default function LetterboxdFolder({ startX, startY, rotation = 0 }) {
     {
       text: "It's Such A Beautiful Day",
       image: "/images/letterboxd/isabd.webp",
-      url: "https://letterboxd.com/film/its-such-a-beautiful-day/",
+      url: "https://www.imdb.com/title/tt2396224/?ref_=ttcrv_ov_i",
     },
     {
       text: "Farewell My Concubine",
