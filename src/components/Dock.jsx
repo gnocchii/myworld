@@ -32,6 +32,10 @@ function Dock({ currentPage, setCurrentPage }) {
       </a>
       <a
         href="#work"
+        onClick={(e) => {
+          e.preventDefault();
+          setCurrentPage('work');
+        }}
         style={{
           color: 'inherit',
           textDecoration: 'none',
@@ -45,6 +49,10 @@ function Dock({ currentPage, setCurrentPage }) {
       </a>
       <a
         href="#play"
+        onClick={(e) => {
+          e.preventDefault();
+          setCurrentPage('play');
+        }}
         style={{
           color: 'inherit',
           textDecoration: 'none',

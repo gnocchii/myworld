@@ -7,6 +7,8 @@ import DraggableSticker from './components/DraggableSticker'
 import Folder from './components/Folder'
 import LetterboxdFolder from './components/LetterboxdFolder'
 import About from './components/About'
+import Work from './components/Work'
+import Play from './components/Play'
 import './App.css'
 
 function App() {
@@ -56,6 +58,8 @@ function App() {
         </div>
 
         {currentPage === 'about' && <About />}
+        {currentPage === 'work' && <Work />}
+        {currentPage === 'play' && <Play />}
       </div>
     </div>
   )

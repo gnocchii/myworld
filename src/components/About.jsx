@@ -1,28 +1,49 @@
+import StackedCarousel from './StackedCarousel';
+
 export default function About() {
+  const carouselImages = [
+    { src: '/images/about/image1.jpeg', alt: 'Photo 1' },
+    { src: '/images/about/image2.jpeg', alt: 'Photo 2' },
+    { src: '/images/about/image3.jpeg', alt: 'Photo 3' },
+    { src: '/images/about/photo4.jpg', alt: 'Photo 4' },
+    { src: '/images/about/photo5.jpg', alt: 'Photo 5' },
+  ];
+
   return (
     <main className="content" style={{
       display: 'flex',
-      flexDirection: 'column',
-      alignItems: 'center',
+      flexDirection: 'row',
+      alignItems: 'flex-start',
       justifyContent: 'center',
       padding: '2rem',
-      maxWidth: '900px',
+      maxWidth: '1100px',
       margin: '0 auto',
+      gap: '3rem',
     }}>
+      {/* Stacked Carousel */}
+      <div style={{
+        flexShrink: 0,
+        paddingTop: '13rem',
+        marginLeft: '-10rem',
+      }}>
+        <StackedCarousel images={carouselImages} />
+      </div>
+
+      {/* Text Content */}
       <div style={{
         fontFamily: "'Roboto Mono', monospace",
         color: '#272622',
-        textAlign: 'center',
+        flex: 1,
       }}>
         <div style={{
-          fontSize: '1rem',
+          fontSize: '0.8rem',
           lineHeight: '1.8',
           textAlign: 'left',
-          marginTop: '2rem',
+          marginTop: '13rem',
         }}>
           <p style={{ marginBottom: '1.5rem' }}>
             Hi! Welcome to M.Y space!
-            
+
             I'm Melody Yang, a multidisciplinary software engineer passionate about creating
             meaningful digital experiences that blend creativity with technology.
             I believe in the power of design to tell stories and connect people.
