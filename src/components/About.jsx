@@ -1,12 +1,13 @@
 import StackedCarousel from './StackedCarousel';
+import PhotoLabel from './PhotoLabel';
 
 export default function About() {
   const carouselImages = [
     { src: '/images/about/image1.jpeg', alt: 'Photo 1' },
     { src: '/images/about/image2.jpeg', alt: 'Photo 2' },
     { src: '/images/about/image3.jpeg', alt: 'Photo 3' },
-    { src: '/images/about/photo4.jpg', alt: 'Photo 4' },
-    { src: '/images/about/photo5.jpg', alt: 'Photo 5' },
+    { src: '/images/about/photo4.jpeg', alt: 'Photo 4' },
+    { src: '/images/about/photo5.jpeg', alt: 'Photo 5' },
   ];
 
   return (
@@ -26,6 +27,13 @@ export default function About() {
         paddingTop: '13rem',
         marginLeft: '-10rem',
       }}>
+        <div style={{
+          fontSize: '0.0001rem',
+          marginLeft: '3rem',
+          marginBottom: '0.5rem',
+        }}>
+          <PhotoLabel count={5} />
+        </div>
         <StackedCarousel images={carouselImages} />
       </div>
 
