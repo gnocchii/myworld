@@ -53,7 +53,7 @@ export default function About() {
             Hi! Welcome to M.Y space!
 
             I'm Melody Yang, a multidisciplinary software engineer passionate about creating
-            meaningful digital experiences that blend creativity with technology.
+            meaningful digital experiences at the intersection of creativity and technology.
             I believe in the power of design to tell stories and connect people.
           </p>
 
@@ -63,10 +63,10 @@ export default function About() {
             marginTop: '2rem',
             marginBottom: '1rem',
           }}>
-            Current Adventure
           </h2>
           <p style={{ marginBottom: '1.5rem' }}>
-            Currently studying Computer Science at Purdue University with minors in Mathematics and Management!
+            I'm currently studying Computer Science and Mathematics at Purdue University with a minor in Management! I'm interested in
+            fullstack development (more frontend), AI research, and creative problem solving.
           </p>
 
           <h2 style={{
@@ -75,13 +75,9 @@ export default function About() {
             marginTop: '2rem',
             marginBottom: '1rem',
           }}>
-            Philosophies
           </h2>
           <p style={{ marginBottom: '1.5rem' }}>
-            • Design should feel effortless, even when it's complex<br/>
-            • Every detail matters, from pixels to interactions<br/>
-            • The best work comes from curiosity and experimentation<br/>
-            • Technology is a tool for human connection, not a replacement for it
+            Outside of work you can find me fine-tuning my music taste, at the cinema, trying to speedrun Celeste, art-dumping, or destroying my digestive system with some spicy snacks and kombucha!
           </p>
         </div>
       </div>
