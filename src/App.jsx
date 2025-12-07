@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Scene from './components/Scene'
 import Dock from './components/Dock'
 import CDPlayer from './components/CDPlayer'
@@ -13,9 +13,31 @@ import './App.css'
 
 function App() {
   const [currentPage, setCurrentPage] = useState('home');
+  const [fadeOut, setFadeOut] = useState(false);
+
+  useEffect(() => {
+    // Start fade out after a brief moment
+    const timer = setTimeout(() => {
+      setFadeOut(true);
+    }, 100);
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
     <div className="app">
+      {/* Initial page load overlay */}
+      <div style={{
+        position: 'fixed',
+        top: 0,
+        left: 0,
+        width: '100%',
+        height: '100%',
+        backgroundColor: '#f5f3ed',
+        opacity: fadeOut ? 0 : 1,
+        transition: 'opacity 1.2s ease-out',
+        pointerEvents: fadeOut ? 'none' : 'all',
+        zIndex: 9999,
+      }} />
       <AudioPlayer />
       <Scene />
 
