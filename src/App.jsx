@@ -16,12 +16,23 @@ function App() {
   const [fadeOut, setFadeOut] = useState(false);
 
   useEffect(() => {
-    // Start fade out after a brief moment
+    // Trigger fade in on initial load
     const timer = setTimeout(() => {
       setFadeOut(true);
     }, 100);
     return () => clearTimeout(timer);
   }, []);
+
+  useEffect(() => {
+    // Trigger fade in when navigating to about page
+    if (currentPage === 'about') {
+      setFadeOut(false);
+      const timer = setTimeout(() => {
+        setFadeOut(true);
+      }, 100);
+      return () => clearTimeout(timer);
+    }
+  }, [currentPage]);
 
   return (
     <div className="app">
