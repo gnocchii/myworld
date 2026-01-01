@@ -2,18 +2,18 @@ import { useState, useEffect } from 'react';
 
 export default function AnimatedTitle() {
   const [currentImage, setCurrentImage] = useState(0);
-  const images = ['/images/arial-narrow.png', '/images/aston-script.png', '/images/paper.png'];
+  const images = ['/images/rom.png', '/images/aston-script.png', '/images/arial.png', '/images/paper.png'];
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentImage((prev) => (prev + 1) % 3);
+      setCurrentImage((prev) => (prev + 1) % 4);
     }, 2000); // Switch every 2 seconds
 
     return () => clearInterval(interval);
   }, []);
 
   // Check if current image is paper.png
-  const isPaper = currentImage === 2;
+  const isPaper = currentImage === 3;
 
   return (
     <div style={{

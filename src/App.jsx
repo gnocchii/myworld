@@ -6,6 +6,7 @@ import AudioPlayer from './components/AudioPlayer'
 import DraggableSticker from './components/DraggableSticker'
 import Folder from './components/Folder'
 import LetterboxdFolder from './components/LetterboxdFolder'
+import ContactsFolder from './components/ContactsFolder'
 import About from './components/About'
 import Work from './components/Work'
 import Play from './components/Play'
@@ -68,19 +69,25 @@ function App() {
             rotation={-8}
           />
 
-          <DraggableSticker
+          {/* <DraggableSticker
             src="/images/kiko folder.png"
             width={150}
             height={150}
             startX="73%"
             startY="54%"
             rotation={8}
-          />
+          /> */}
 
           <LetterboxdFolder
-            startX="75%"
-            startY="25%"
+            startX="68.5%"
+            startY="15.5%"
             rotation={1}
+          />
+
+          <ContactsFolder
+            startX="72.5%"
+            startY="128%"
+            rotation={5}
           />
 
           <main className="content">

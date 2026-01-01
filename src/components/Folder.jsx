@@ -10,7 +10,21 @@ export default function Folder({ title, startX, startY, rotation = 0 }) {
 
   const photos = [
     {
-      text: "nothing yet!"
+      text: "cso!!",
+      image: "/images/symphony.png"
+    },
+    {
+      text: "bison :3",
+      image: "/images/bison.png"
+    },
+    ,
+    {
+      text: "machine#gal",
+      image: "/images/machinegirl.jpeg"
+    },
+    {
+      text: "houston ballet",
+      image: "/images/ballet.png"
     },
   ];
 

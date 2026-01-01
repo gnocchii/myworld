@@ -4,7 +4,7 @@ import { Draggable } from 'gsap/Draggable';
 
 gsap.registerPlugin(Draggable);
 
-export default function LetterboxdFolder({ startX, startY, rotation = 0 }) {
+export default function LetterboxdFolder({ startX, startY, rotation = 5 }) {
   const [isOpen, setIsOpen] = useState(false);
   const folderRef = useRef(null);
 
