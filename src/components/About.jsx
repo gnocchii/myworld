@@ -58,7 +58,7 @@ export default function About() {
           textAlign: 'left',
         }}>
           <p style={{ marginBottom: '1.5rem' }}>
-            I'm Melody Yang, a multidisciplinary software engineer passionate about creating
+            I'm Melody, a software engineer passionate about creating
             meaningful digital experiences at the intersection of creativity and technology.
             I believe in the power of design to tell stories and connect people.
           </p>
