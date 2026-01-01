@@ -13,7 +13,8 @@ export default function AnimatedTitle() {
   }, []);
 
   // Check if current image is paper.png
-  const isPaper = currentImage === 3;
+  const currentImageSrc = images[currentImage];
+  const isPaper = currentImageSrc === '/images/paper.png';
 
   return (
     <div style={{
@@ -23,7 +24,8 @@ export default function AnimatedTitle() {
       margin: '0 auto',
     }}>
       <img
-        src={images[currentImage]}
+        key={currentImageSrc}
+        src={currentImageSrc}
         alt="Melody Yang"
         style={{
           width: '100%',
