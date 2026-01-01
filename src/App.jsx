@@ -9,6 +9,7 @@ import LetterboxdFolder from './components/LetterboxdFolder'
 import About from './components/About'
 import Work from './components/Work'
 import Play from './components/Play'
+import AnimatedTitle from './components/AnimatedTitle'
 import './App.css'
 
 function App() {
@@ -84,7 +85,7 @@ function App() {
 
           <main className="content">
             <div className="hero-title">
-              <h1>Melody Yang</h1>
+              <AnimatedTitle />
               <p>MULTIDISCIPLINARY DESIGNER REIMAGINING CREATIVE DIGITAL EXPERIENCES</p>
             </div>
           </main>

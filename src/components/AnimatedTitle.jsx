@@ -2,15 +2,18 @@ import { useState, useEffect } from 'react';
 
 export default function AnimatedTitle() {
   const [currentImage, setCurrentImage] = useState(0);
-  const images = ['/images/brat.png', '/images/aston-script.png'];
+  const images = ['/images/arial-narrow.png', '/images/aston-script.png', '/images/paper.png'];
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentImage((prev) => (prev + 1) % 2);
-    }, 3000); // Switch every 3 seconds
+      setCurrentImage((prev) => (prev + 1) % 3);
+    }, 2000); // Switch every 2 seconds
 
     return () => clearInterval(interval);
   }, []);
+
+  // Check if current image is paper.png
+  const isPaper = currentImage === 2;
 
   return (
     <div style={{
@@ -19,23 +22,16 @@ export default function AnimatedTitle() {
       height: '120px',
       margin: '0 auto',
     }}>
-      {images.map((img, index) => (
-        <img
-          key={img}
-          src={img}
-          alt={index === 0 ? 'Brat' : 'Aston Script'}
-          style={{
-            position: 'absolute',
-            top: 0,
-            left: 0,
-            width: '100%',
-            height: '100%',
-            objectFit: 'contain',
-            opacity: currentImage === index ? 1 : 0,
-            transition: 'opacity 1.5s ease-in-out',
-          }}
-        />
-      ))}
+      <img
+        src={images[currentImage]}
+        alt="Melody Yang"
+        style={{
+          width: '100%',
+          height: '100%',
+          objectFit: 'contain',
+          transform: isPaper ? 'scale(1.5) translateY(-30px)' : 'scale(1)',
+        }}
+      />
     </div>
   );
 }
