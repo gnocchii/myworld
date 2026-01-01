@@ -3,10 +3,10 @@ import PhotoLabel from './PhotoLabel';
 
 export default function About() {
   const carouselImages = [
-    { src: '/images/about/image1.jpeg', alt: 'Photo 1' },
-    { src: '/images/about/image2.jpeg', alt: 'Photo 2' },
-    { src: '/images/about/image3.jpeg', alt: 'Photo 3' },
-    { src: '/images/about/photo4.jpeg', alt: 'Photo 4' },
+    { src: '/images/about/image2.jpeg', alt: 'Photo 1' },
+    { src: '/images/about/image1.jpeg', alt: 'Photo 2' },
+    { src: '/images/about/photo4.jpeg', alt: 'Photo 3' },
+    { src: '/images/about/image3.jpeg', alt: 'Photo 4' },
     { src: '/images/about/photo5.jpeg', alt: 'Photo 5' },
   ];
 
@@ -44,14 +44,20 @@ export default function About() {
         flex: 1,
       }}>
         <div style={{
+          fontFamily: "'Georgia', serif",
+          fontSize: '2.5rem',
+          textAlign: 'left',
+          marginTop: '13rem',
+          marginBottom: '2rem',
+        }}>
+          Hi, welcome to m.y world!
+        </div>
+        <div style={{
           fontSize: '0.8rem',
           lineHeight: '1.8',
           textAlign: 'left',
-          marginTop: '13rem',
         }}>
           <p style={{ marginBottom: '1.5rem' }}>
-            Hi! Welcome to M.Y space!
-
             I'm Melody Yang, a multidisciplinary software engineer passionate about creating
             meaningful digital experiences at the intersection of creativity and technology.
             I believe in the power of design to tell stories and connect people.
@@ -65,7 +71,7 @@ export default function About() {
           }}>
           </h2>
           <p style={{ marginBottom: '1.5rem' }}>
-            I'm currently studying Computer Science and Mathematics at Purdue University with a minor in Management! I'm interested in
+            I'm currently studying Computer Science at Purdue University with minors in Mathematics and Management! I'm interested in
             fullstack development (more frontend), AI research, and creative problem solving.
           </p>
 
@@ -77,7 +83,7 @@ export default function About() {
           }}>
           </h2>
           <p style={{ marginBottom: '1.5rem' }}>
-            Outside of work you can find me milking my music taste, at the cinema, trying to speedrun Celeste, art-dumping, practicing Rachmaninoff's sonata 2, or destroying my digestive tracts with spicy snacks and kombucha!
+            Outside of work you can find me milking my music taste, at the cinema, trying to speedrun Celeste, skiing, practicing Rachmaninoff's sonata 2, or destroying my digestive tracts with spicy snacks and kombucha!
           </p>
         </div>
       </div>

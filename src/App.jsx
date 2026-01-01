@@ -64,8 +64,8 @@ function App() {
         <div style={{ display: currentPage === 'home' ? 'block' : 'none' }}>
           <Folder
             title="photos"
-            startX="20%"
-            startY="45%"
+            startX="27.8%"
+            startY="46%"
             rotation={-8}
           />
 
@@ -79,21 +79,21 @@ function App() {
           /> */}
 
           <LetterboxdFolder
-            startX="68.5%"
-            startY="15.5%"
+            startX="67%"
+            startY="22%"
             rotation={1}
           />
 
           <ContactsFolder
-            startX="72.5%"
-            startY="128%"
+            startX="66.7%"
+            startY="54.3%"
             rotation={5}
           />
 
           <main className="content">
             <div className="hero-title">
               <AnimatedTitle />
-              <p>MULTIDISCIPLINARY DESIGNER REIMAGINING CREATIVE DIGITAL EXPERIENCES</p>
+              <p>PORTFOLIO WEBSITE</p>
             </div>
           </main>
         </div>
