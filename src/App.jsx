@@ -100,7 +100,7 @@ function App() {
             rotation={0}
           />
 
-          {isMobile && <AnimatedTitle />}
+          <AnimatedTitle />
 
           {/* <main className="content">
             <div className="hero-title" style={isMobile ? {
@@ -122,8 +122,7 @@ function App() {
               zIndex: 100,
               pointerEvents: 'auto',
             } : {}}>
-              {!isMobile && <AnimatedTitle />}
-              
+
             </div>
            </main> */}
         </div>

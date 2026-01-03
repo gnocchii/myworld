@@ -34,14 +34,14 @@ export default function AnimatedTitle() {
     <div style={{
       position: 'absolute',
       left: '50%',
-      top: isMobile ? '30%' : '-798%',
+      top: isMobile ? '25%' : '34%',
       width: isMobile ? '300px' : '400px',
       height: isMobile ? 'auto' : '120px',
       margin: '0 auto',
       zIndex: 60,
       pointerEvents: 'none',
       transform: isPaper
-        ? `translate(-50%, -50%) scale(${isMobile ? 1.3 : 1.5})`
+        ? `translate(-50%, -50%) scale(${isMobile ? 1 : 1.5})`
         : 'translate(-50%, -50%)',
       transition: 'top 0.3s ease',
     }}>
