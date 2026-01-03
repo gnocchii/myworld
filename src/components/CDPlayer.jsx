@@ -171,8 +171,8 @@ function CD() {
           />
           <div
             style={{
-              width: "150px",
-              height: "150px",
+              width: isMobile? "105px":"150px",
+              height: isMobile? "105px":"150px",
               position: "absolute",
               left: "50%",
               top: "50%",
@@ -184,8 +184,8 @@ function CD() {
           />
           <div
             style={{
-              width: "143px",
-              height: "143px",
+              width: isMobile? "95px": "143px",
+              height: isMobile? "95px": "143px",
               position: "absolute",
               left: "50%",
               top: "50%",
@@ -196,8 +196,8 @@ function CD() {
           />
           <div
             style={{
-              width: "127px",
-              height: "127px",
+              width: isMobile? "67px": "127px",
+              height: isMobile? "67px": "127px",
               position: "absolute",
               left: "50%",
               top: "50%",
@@ -210,8 +210,8 @@ function CD() {
           />
           <div
             style={{
-              width: "85px",
-              height: "85px",
+              width: isMobile? "55px":"85px",
+              height: isMobile? "55px":"85px",
               position: "absolute",
               left: "50%",
               top: "50%",
@@ -222,8 +222,8 @@ function CD() {
           />
           <div
             style={{
-              width: "70px",
-              height: "70px",
+              width: isMobile? "45px":"70px",
+              height: isMobile? "45px":"70px",
               position: "absolute",
               left: "50%",
               top: "50%",
@@ -234,8 +234,8 @@ function CD() {
           />
           <div
             style={{
-              width: "67px",
-              height: "67px",
+              width: isMobile? "45px":"67px",
+              height: isMobile? "45px":"67px",
               position: "absolute",
               left: "50%",
               top: "50%",
@@ -246,8 +246,8 @@ function CD() {
           />
           <div
             style={{
-              width: "60px",
-              height: "60px",
+              width: isMobile? "35px":"60px",
+              height: isMobile? "35px":"60px",
               position: "absolute",
               left: "50%",
               top: "50%",
