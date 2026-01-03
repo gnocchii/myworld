@@ -83,7 +83,7 @@ export default function About() {
           }}>
           </h2>
           <p style={{ marginBottom: '1.5rem' }}>
-            Outside of work you can find me milking my music taste, at the cinema, trying to speedrun Celeste, skiing, practicing Rachmaninoff's sonata 2, or destroying my digestive tracts with spicy snacks and kombucha!
+            Outside of work you can find me milking my music taste, at the cinema, playing Celeste, skiing, sightreading Rachmaninoff, or destroying my digestive tracts with spicy snacks and kombucha!
           </p>
         </div>
       </div>
