@@ -102,7 +102,7 @@ function App() {
 
           {isMobile && <AnimatedTitle />}
 
-          <main className="content">
+          {/* <main className="content">
             <div className="hero-title" style={isMobile ? {
               background: 'rgba(255, 255, 255, 0.6)',
               border: '1px solid rgb(229, 229, 229)',
@@ -125,7 +125,7 @@ function App() {
               {!isMobile && <AnimatedTitle />}
               
             </div>
-          </main>
+           </main> */}
         </div>
 
         {currentPage === 'about' && <About />}
