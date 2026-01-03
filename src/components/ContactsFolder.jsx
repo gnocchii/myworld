@@ -100,7 +100,7 @@ export default function ContactsFolder({ startX, startY, rotation = 0 }) {
           src="/images/contacts.webp"
           alt="contacts"
           style={{
-            width: '62px',
+            width: isMobile? '62px' : '80px',
             height: 'auto',
             cursor: 'grab',
             userSelect: 'none',

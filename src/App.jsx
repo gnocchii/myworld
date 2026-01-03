@@ -76,7 +76,7 @@ function App() {
             title="photos"
             startX="27.8%"
             startY="46%"
-            rotation={-8}
+            rotation={0}
           />
 
           {/* <DraggableSticker
@@ -91,13 +91,13 @@ function App() {
           <LetterboxdFolder
             startX="67%"
             startY="22%"
-            rotation={1}
+            rotation={0}
           />
 
           <ContactsFolder
             startX="66.7%"
             startY="54.3%"
-            rotation={5}
+            rotation={0}
           />
 
           {isMobile && <AnimatedTitle />}
@@ -109,7 +109,7 @@ function App() {
               borderRadius: '50%',
               width: '33px',
               height: '33px',
-              top: isMobile? '-114px' : '95px',
+              top: isMobile? '-114px' : '85px',
               left: '-1px',
               padding: '8px',
               display: 'flex',
@@ -123,7 +123,7 @@ function App() {
               pointerEvents: 'auto',
             } : {}}>
               {!isMobile && <AnimatedTitle />}
-              <p>PORTFOLIO WEBSITE</p>
+              
             </div>
           </main>
         </div>
