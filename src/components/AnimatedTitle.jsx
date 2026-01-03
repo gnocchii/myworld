@@ -28,21 +28,18 @@ export default function AnimatedTitle() {
   }, [status]);
 
   const currentImageSrc = images[currentImage];
-  const isPaper = currentImageSrc === '/images/paper.png';
 
   return (
     <div style={{
       position: 'absolute',
       left: '50%',
-      top: isMobile ? '22%' : '40%',
-      width: isMobile ? '200px' : '400px',
+      top: isMobile ? '18%' : '40%',
+      width: isMobile ? '300px' : '400px',
       height: isMobile ? 'auto' : '120px',
       margin: '0 auto',
       zIndex: 60,
       pointerEvents: 'none',
-      transform: isPaper
-        ? `translate(-50%, -50%) scale(${isMobile ? 1.2 : 1.5})`
-        : 'translate(-50%, -50%) scale(1)',
+      transform: 'translate(-50%, -50%)',
       transition: 'top 0.3s ease, transform 0.3s ease',
     }}>
       <img

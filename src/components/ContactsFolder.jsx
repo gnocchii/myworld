@@ -80,8 +80,8 @@ export default function ContactsFolder({ startX, startY, rotation = 0 }) {
       ref={folderRef}
       style={{
         position: 'absolute',
-        left: startX,
-        top: startY,
+        left: isMobile? '63.7%' : startX,
+        top: isMobile? '56.3%' :startY,
         zIndex: 30,
         transition: 'all 0.2s',
       }}

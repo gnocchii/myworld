@@ -1,4 +1,18 @@
+import { useState, useEffect } from 'react';
+
 function Dock({ currentPage, setCurrentPage }) {
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   return (
     <nav style={{
       position: 'fixed',
@@ -10,7 +24,7 @@ function Dock({ currentPage, setCurrentPage }) {
       gap: '2rem',
       fontFamily: "'Roboto Mono', monospace",
       fontWeight: 300,
-      fontSize: '1rem',
+      fontSize: isMobile? '0.9rem' : '1rem',
       color: '#272622',
     }}>
       <a

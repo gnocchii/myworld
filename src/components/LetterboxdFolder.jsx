@@ -30,8 +30,16 @@ export default function LetterboxdFolder({ startX, startY, rotation = 5 }) {
       url: "https://www.rogerebert.com/reviews/mulholland-drive-2001",
     }
   ];
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
 
   useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    handleResize();
+    window.addEventListener('resize', handleResize);
+
     if (folderRef.current) {
       gsap.set(folderRef.current, { x: 0, y: 0 });
       Draggable.create(folderRef.current, {
@@ -39,8 +47,11 @@ export default function LetterboxdFolder({ startX, startY, rotation = 5 }) {
         bounds: document.body,
         inertia: true,
         zIndexBoost: true,
+        dragClickables: false,
       });
     }
+
+    return () => window.removeEventListener('resize', handleResize);
   }, []);
 
   const toggleFolder = () => {
@@ -69,8 +80,8 @@ export default function LetterboxdFolder({ startX, startY, rotation = 5 }) {
       ref={folderRef}
       style={{
         position: 'absolute',
-        left: startX,
-        top: startY,
+        left: isMobile ? '62%' :startX,
+        top: isMobile ? '38%' : startY,
         zIndex: 30,
         transition: 'all 0.2s',
       }}
@@ -89,7 +100,7 @@ export default function LetterboxdFolder({ startX, startY, rotation = 5 }) {
           src="/images/letterboxd.svg"
           alt="letterboxd"
           style={{
-            width: '80px',
+            width: isMobile? '68px':'80px',
             height: 'auto',
             cursor: 'grab',
             userSelect: 'none',
@@ -101,8 +112,8 @@ export default function LetterboxdFolder({ startX, startY, rotation = 5 }) {
       <div
         style={{
           position: 'absolute',
-          top: '110%',
-          left: '8%',
+          top: isMobile? '22%':'110%',
+          left: isMobile? '29%':'8%',
           transformOrigin: '0% -30%',
           backgroundColor: 'rgba(255, 255, 255, 0.8)',
           backdropFilter: 'blur(16px)',

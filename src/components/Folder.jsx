@@ -71,8 +71,8 @@ export default function Folder({ title, startX, startY, rotation = 0 }) {
       ref={folderRef}
       style={{
         position: 'absolute',
-        left: startX,
-        top: startY,
+        left: isMobile? '18.8%':startX,
+        top: isMobile? '47%':startY,
         zIndex: 30,
         transition: 'all 0.2s',
       }}

@@ -109,7 +109,7 @@ function App() {
               borderRadius: '50%',
               width: '33px',
               height: '33px',
-              top: '95px',
+              top: isMobile? '-114px' : '95px',
               left: '-1px',
               padding: '8px',
               display: 'flex',

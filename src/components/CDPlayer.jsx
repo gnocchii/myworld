@@ -30,9 +30,9 @@ function CD() {
 
   const cdSize = isMobile ? 275 : 475;
   const containerWidth = isMobile ? "100%" : "700px";
-  const statusTop = isMobile ? "80px" : "-60px";
+  const statusTop = isMobile ? "59px" : "-60px";
   const statusFontSize = isMobile ? "0.7rem" : "0.9rem";
-  const cdTop = isMobile ? "112px" : "0";
+  const cdTop = isMobile ? "86px" : "0";
 
   return (
     <div style={{
@@ -279,8 +279,9 @@ function CD() {
             background: "rgba(255, 255, 255, 0.6)",
             border: "1px solid #e5e5e5",
             borderRadius: "50%",
-            width: "40px",
-            height: "40px",
+            width: isMobile ? "33px" : "40px",
+            height: isMobile ? "33px" : "40px",
+            ...(isMobile ? { top: "77px", left: "-45px" } : {}),
             padding: "8px",
             display: "flex",
             alignItems: "center",
@@ -288,7 +289,7 @@ function CD() {
             transition: "all 0.2s",
             boxShadow: "0 1px 2px rgba(0,0,0,0.05)",
             cursor: "pointer",
-            position: "relative",
+            position: "relative", 
             zIndex: 100,
             pointerEvents: "auto",
           }}
@@ -326,7 +327,7 @@ function CD() {
             borderRadius: "50%",
             width: isMobile ? "33px" : "40px",
             height: isMobile ? "33px" : "40px",
-            ...(isMobile ? { top: "95px", left: "45px" } : {}),
+            ...(isMobile ? { top: "77px", left: "45px" } : {}),
             padding: "8px",
             display: "flex",
             alignItems: "center",
