@@ -27,8 +27,13 @@ export default function Folder({ title, startX, startY, rotation = 0 }) {
       image: "/images/ballet.png"
     },
   ];
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
 
   useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
     if (folderRef.current) {
       gsap.set(folderRef.current, { x: 0, y: 0 });
       Draggable.create(folderRef.current, {
@@ -86,7 +91,7 @@ export default function Folder({ title, startX, startY, rotation = 0 }) {
           src="/images/folder-icon copy.webp"
           alt="folder"
           style={{
-            width: '80px',
+            width: isMobile? '66px' : '80px',
             height: 'auto',
             cursor: 'grab',
             userSelect: 'none',

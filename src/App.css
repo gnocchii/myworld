@@ -87,5 +87,15 @@
 
   .content {
     padding: 2rem 1.5rem;
+    top: 45%;
+  }
+
+  .hero-title {
+    width: 191px;
+  }
+
+  .hero-title p {
+    font-size: 0.9rem;
+    line-height: 1.6;
   }
 }

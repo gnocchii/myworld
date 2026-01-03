@@ -7,6 +7,16 @@ gsap.registerPlugin(Draggable);
 export default function ContactsFolder({ startX, startY, rotation = 0 }) {
   const [isOpen, setIsOpen] = useState(false);
   const folderRef = useRef(null);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   const contacts = [
     {
@@ -89,7 +99,7 @@ export default function ContactsFolder({ startX, startY, rotation = 0 }) {
           src="/images/contacts.webp"
           alt="contacts"
           style={{
-            width: '80px',
+            width: '62px',
             height: 'auto',
             cursor: 'grab',
             userSelect: 'none',
@@ -101,19 +111,26 @@ export default function ContactsFolder({ startX, startY, rotation = 0 }) {
       <div
         style={{
           position: 'absolute',
-          top: '110%',
-          left: '8%',
-          transformOrigin: '0% -30%',
+          top: isMobile ? '80px' : '110%',
+          ...(isMobile
+            ? { left: '-2%', transform: isOpen ? 'translateX(-50%) scale(1)' : 'translateX(-50%) scale(0)' }
+            : { left: '8%', transform: isOpen ? 'scale(1)' : 'scale(0)' }
+          ),
+          transformOrigin: isMobile ? 'center' : '0% -30%',
           backgroundColor: 'rgba(255, 255, 255, 0.8)',
           backdropFilter: 'blur(16px)',
           color: '#404040',
           boxShadow: '0 4px 6px rgba(0,0,0,0.1)',
           borderRadius: '6px',
-          width: '240px',
+          width: isMobile? '168px':'240px',
           transition: 'all 0.2s ease',
-          transform: isOpen ? 'scale(1)' : 'scale(0)',
           opacity: isOpen ? 1 : 0,
           pointerEvents: isOpen ? 'auto' : 'none',
+          fontFamily: "'Roboto Mono', monospace",
+          fontSize: '0.7rem',
+          fontWeight: 300,
+          textAlign: 'center',
+          whiteSpace: 'nowrap',
         }}
       >
         {/* Window header bar */}
@@ -136,7 +153,7 @@ export default function ContactsFolder({ startX, startY, rotation = 0 }) {
             gap: '1rem',
             fontFamily: 'sans-serif',
             fontSize: '0.7rem',
-            margin: '1.5rem 0',
+            margin: isMobile? '0.5rem 0px' : '1.5rem 0',
             padding: '0 1rem',
             justifyContent: 'center',
           }}

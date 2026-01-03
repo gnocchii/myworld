@@ -99,4 +99,8 @@
   .dock-icon {
     font-size: 20px;
   }
+
+  .dock-label {
+    font-size: 0.8rem;
+  }
 }

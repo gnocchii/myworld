@@ -16,6 +16,16 @@ import './App.css'
 function App() {
   const [currentPage, setCurrentPage] = useState('home');
   const [fadeOut, setFadeOut] = useState(false);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   useEffect(() => {
     // Trigger fade in on initial load
@@ -90,9 +100,29 @@ function App() {
             rotation={5}
           />
 
+          {isMobile && <AnimatedTitle />}
+
           <main className="content">
-            <div className="hero-title">
-              <AnimatedTitle />
+            <div className="hero-title" style={isMobile ? {
+              background: 'rgba(255, 255, 255, 0.6)',
+              border: '1px solid rgb(229, 229, 229)',
+              borderRadius: '50%',
+              width: '33px',
+              height: '33px',
+              top: '95px',
+              left: '-1px',
+              padding: '8px',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              transition: '0.2s',
+              boxShadow: 'rgba(0, 0, 0, 0.05) 0px 1px 2px',
+              cursor: 'pointer',
+              position: 'relative',
+              zIndex: 100,
+              pointerEvents: 'auto',
+            } : {}}>
+              {!isMobile && <AnimatedTitle />}
               <p>PORTFOLIO WEBSITE</p>
             </div>
           </main>

@@ -1,10 +1,22 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useAudio } from "./AudioContext";
+import { useState, useEffect } from "react";
 
 function CD() {
   const { currentSongIndex, setCurrentSongIndex, status, setStatus, allSongs } = useAudio();
   const currentSong = allSongs[currentSongIndex];
   const playing = status === "playing";
+
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   const handleNextSong = () => {
     const nextIndex = (currentSongIndex + 1) % allSongs.length;
@@ -16,11 +28,17 @@ function CD() {
     setCurrentSongIndex(prevIndex);
   };
 
+  const cdSize = isMobile ? 275 : 475;
+  const containerWidth = isMobile ? "100%" : "700px";
+  const statusTop = isMobile ? "80px" : "-60px";
+  const statusFontSize = isMobile ? "0.7rem" : "0.9rem";
+  const cdTop = isMobile ? "112px" : "0";
+
   return (
     <div style={{
       position: "absolute",
       height: "225px",
-      width: "700px",
+      width: containerWidth,
       left: "50%",
       bottom: "15%",
       transform: "translateX(-50%)",
@@ -30,11 +48,11 @@ function CD() {
       {/* Status display */}
       <div style={{
         position: "absolute",
-        top: "-60px",
+        top: statusTop,
         left: "50%",
         transform: "translateX(-50%)",
         fontFamily: "'Roboto Mono', monospace",
-        fontSize: "0.9rem",
+        fontSize: statusFontSize,
         color: "#272622",
         fontWeight: 300,
         textAlign: "center",
@@ -76,10 +94,11 @@ function CD() {
           setStatus(status === "playing" ? "paused" : "playing");
         }}
         style={{
-          width: "475px",
-          height: "475px",
+          width: `${cdSize}px`,
+          height: `${cdSize}px`,
           position: "absolute",
           left: "50%",
+          top: cdTop,
           zIndex: 20,
           display: "flex",
           transformOrigin: "center",
@@ -250,7 +269,7 @@ function CD() {
           top: "100%",
           left: "50%",
           transform: "translate(-50%, -100px)",
-          gap: "500px",
+          gap: isMobile ? "200px" : "500px",
         }}
       >
         <button
@@ -303,16 +322,17 @@ function CD() {
           aria-label="next"
           style={{
             background: "rgba(255, 255, 255, 0.6)",
-            border: "1px solid #e5e5e5",
+            border: "1px solid rgb(229, 229, 229)",
             borderRadius: "50%",
-            width: "40px",
-            height: "40px",
+            width: isMobile ? "33px" : "40px",
+            height: isMobile ? "33px" : "40px",
+            ...(isMobile ? { top: "95px", left: "45px" } : {}),
             padding: "8px",
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
-            transition: "all 0.2s",
-            boxShadow: "0 1px 2px rgba(0,0,0,0.05)",
+            transition: "0.2s",
+            boxShadow: "rgba(0, 0, 0, 0.05) 0px 1px 2px",
             cursor: "pointer",
             position: "relative",
             zIndex: 100,
