@@ -164,6 +164,7 @@ export default function ContactsFolder({ startX, startY, rotation = 0 }) {
               href={contact.url}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={(e) => e.stopPropagation()}
               style={{
                 textDecoration: 'none',
                 width: '60px',
