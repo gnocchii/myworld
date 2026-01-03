@@ -49,6 +49,7 @@ export default function ContactsFolder({ startX, startY, rotation = 0 }) {
         bounds: document.body,
         inertia: true,
         zIndexBoost: true,
+        dragClickables: false,
       });
     }
   }, []);
