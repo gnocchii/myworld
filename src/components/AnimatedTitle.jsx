@@ -5,7 +5,7 @@ export default function AnimatedTitle() {
   const [currentImage, setCurrentImage] = useState(0);
   const [isMobile, setIsMobile] = useState(false); // Start false for SSR safety
   const { status } = useAudio();
-  const images = ['/images/rom.png', '/images/name.png', '/images/brat.png', '/images/paper.png'];
+  const images = ['/images/rom.png', '/images/kunanyi.PNG', '/images/name.png', '/images/brat.png', '/images/pencil.png'];
 
   useEffect(() => {
     // Set initial state and handle resize
@@ -21,7 +21,7 @@ export default function AnimatedTitle() {
     let interval;
     if (status === 'playing') {
       interval = setInterval(() => {
-        setCurrentImage((prev) => (prev + 1) % 4);
+        setCurrentImage((prev) => (prev + 1) % 5);
       }, 2000);
     }
     return () => { if (interval) clearInterval(interval); };
@@ -30,21 +30,22 @@ export default function AnimatedTitle() {
   const currentImageSrc = images[currentImage];
   const isPaper = currentImageSrc === '/images/paper.png';
   const isName = currentImageSrc === '/images/name.png';
-
+  const isKun = currentImageSrc === '/images/kunanyi.PNG';
+  
   return (
     <div style={{
       position: 'absolute',
       left: '50%',
       top: isMobile ? '25%' : '34%',
-      width: isMobile ? '300px' : '400px',
+      width: isMobile ? '250px' : '325px',
       height: isMobile ? 'auto' : '120px',
       margin: '0 auto',
       zIndex: 60,
       pointerEvents: 'none',
       transform: isPaper
-        ? `translate(-50%, -50%) scale(${isMobile ? 1 : 1.9})`
+        ? `translate(-50%, -50%) scale(${isMobile ? 1 : 1.3})`
         : isName
-        ? `translate(-50%, -50%) scale(${isMobile ? 1 : 1.9})`
+        ? `translate(-50%, -50%) scale(${isMobile ? 1 : 1})`
         : 'translate(-50%, -50%)',
       transition: 'top 0.3s ease',
     }}>
