@@ -39,12 +39,12 @@ export default function About() {
 
       {/* Text Content */}
       <div style={{
-        fontFamily: "'Roboto Mono', monospace",
+        fontFamily: "'Relationship of Melodrame', monospace",
         color: '#272622',
         flex: 1,
       }}>
         <div style={{
-          fontFamily: "'Georgia', serif",
+          fontFamily: "'relationship of melodrame', serif",
           fontSize: '2.5rem',
           textAlign: 'left',
           marginTop: '13rem',
