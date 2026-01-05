@@ -17,6 +17,7 @@ function App() {
   const [currentPage, setCurrentPage] = useState('home');
   const [fadeOut, setFadeOut] = useState(false);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+  const [currentTime, setCurrentTime] = useState(new Date());
 
   useEffect(() => {
     const handleResize = () => {
@@ -25,6 +26,14 @@ function App() {
 
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentTime(new Date());
+    }, 1000);
+
+    return () => clearInterval(timer);
   }, []);
 
   useEffect(() => {
@@ -70,6 +79,26 @@ function App() {
         </div>
 
         <Dock currentPage={currentPage} setCurrentPage={setCurrentPage} />
+
+        {/* Local Time Display */}
+        <div style={{
+          position: 'fixed',
+          top: '5rem',
+          left: '50%',
+          transform: 'translateX(-50%)',
+          zIndex: 100,
+          fontFamily: "'Roboto Mono', monospace",
+          fontSize: isMobile ? '0.8rem' : '0.9rem',
+          color: '#272622',
+          fontWeight: 300,
+        }}>
+          {currentTime.toLocaleTimeString('en-US', {
+            hour: '2-digit',
+            minute: '2-digit',
+            second: '2-digit',
+            hour12: true
+          })}
+        </div>
 
         <div style={{ display: currentPage === 'home' ? 'block' : 'none' }}>
           <Folder
