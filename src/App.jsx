@@ -74,33 +74,47 @@ function App() {
       <Scene />
 
       <div className="overlay">
-        <div style={{ display: currentPage === 'home' ? 'block' : 'none' }}>
-          <CDPlayer />
-        </div>
-
         <Dock currentPage={currentPage} setCurrentPage={setCurrentPage} />
 
-        {/* Local Time Display */}
-        <div style={{
-          position: 'fixed',
-          top: '5rem',
-          left: '50%',
-          transform: 'translateX(-50%)',
-          zIndex: 100,
-          fontFamily: "'Roboto Mono', monospace",
-          fontSize: isMobile ? '0.8rem' : '0.9rem',
-          color: '#272622',
-          fontWeight: 300,
-        }}>
-          {currentTime.toLocaleTimeString('en-US', {
-            hour: '2-digit',
-            minute: '2-digit',
-            second: '2-digit',
-            hour12: true
-          })}
-        </div>
-
         <div style={{ display: currentPage === 'home' ? 'block' : 'none' }}>
+          <CDPlayer />
+
+          {/* Local Time Display */}
+          <div style={{
+            position: 'fixed',
+            top: '4rem',
+            left: '50%',
+            transform: 'translateX(-50%)',
+            zIndex: 100,
+            fontFamily: "'SF Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+            color: '#1d1d1f',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            gap: '0.5rem',
+          }}>
+            <div style={{
+              fontSize: isMobile ? '1rem' : '1.2rem',
+              fontWeight: 600,
+              letterSpacing: '-0.01em',
+              textAlign: 'center',
+            }}>
+              {currentTime.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric' })}
+            </div>
+            <div style={{
+              fontSize: isMobile ? '4rem' : '5.5rem',
+              fontWeight: 500,
+              letterSpacing: '-0.03em',
+              lineHeight: 1,
+              textAlign: 'center',
+            }}>
+              {currentTime.toLocaleTimeString('en-US', {
+                hour: 'numeric',
+                minute: '2-digit',
+                hour12: false
+              })}
+            </div>
+          </div>
           <Folder
             title="photos"
             startX="27.8%"

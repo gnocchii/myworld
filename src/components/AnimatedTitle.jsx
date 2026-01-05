@@ -45,7 +45,7 @@ export default function AnimatedTitle() {
       transform: isPaper
         ? `translate(-50%, -50%) scale(${isMobile ? 1 : 1.3})`
         : isName
-        ? `translate(-50%, -50%) scale(${isMobile ? 1 : 1})`
+        ? `translate(-50%, -35%) scale(${isMobile ? 1 : 1.5})`
         : 'translate(-50%, -50%)',
       transition: 'top 0.3s ease',
     }}>

@@ -17,8 +17,7 @@ function Dock({ currentPage, setCurrentPage }) {
     <nav style={{
       position: 'fixed',
       top: '2rem',
-      left: '50%',
-      transform: 'translateX(-50%)',
+      right: '2rem',
       zIndex: 100,
       display: 'flex',
       gap: '2rem',
