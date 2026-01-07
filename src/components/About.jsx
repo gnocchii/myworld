@@ -34,8 +34,14 @@ export default function About() {
       margin: '0 auto',
       gap: isMobile ? '-4rem' : '3rem',
       ...(isMobile && {
+        position: 'fixed',
+        top: 0,
+        left: 0,
+        right: 0,
+        bottom: 0,
         height: '100vh',
-        overflowY: 'scroll',
+        overflowY: 'auto',
+        WebkitOverflowScrolling: 'touch',
         paddingBottom: '4rem',
       }),
     }}>
