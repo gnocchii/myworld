@@ -82,7 +82,7 @@ function App() {
           {/* Local Time Display */}
           <div style={{
             position: 'fixed',
-            top: '4rem',
+            top: isMobile ? '5rem' : '4rem',
             left: '50%',
             transform: 'translateX(-50%)',
             zIndex: 100,

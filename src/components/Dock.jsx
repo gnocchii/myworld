@@ -17,13 +17,13 @@ function Dock({ currentPage, setCurrentPage }) {
     <nav style={{
       position: 'fixed',
       top: '2rem',
-      right: '2rem',
+      right: isMobile? '4rem':'2rem',
       zIndex: 100,
       display: 'flex',
       gap: '2rem',
       fontFamily: "'Roboto Mono', monospace",
       fontWeight: 300,
-      fontSize: isMobile? '0.9rem' : '1rem',
+      fontSize: isMobile? '0.85rem' : '1rem',
       color: '#272622',
     }}>
       <a
