@@ -28,37 +28,34 @@ export default function About() {
       display: 'flex',
       flexDirection: isMobile ? 'column' : 'row',
       alignItems: isMobile ? 'center' : 'flex-start',
-      justifyContent: 'center',
-      padding: isMobile ? '3rem' : '2rem',
-      maxWidth: '1100px',
+      justifyContent: isMobile ? 'flex-start' : 'center',
+      padding: isMobile ? '8rem 2rem 4rem 2rem' : '2rem',
+      maxWidth: isMobile ? '100%' : '1100px',
       margin: '0 auto',
-      gap: isMobile ? '-4rem' : '3rem',
+      gap: isMobile ? '2rem' : '3rem',
       ...(isMobile && {
-        position: 'fixed',
-        top: 0,
-        left: 0,
-        right: 0,
-        bottom: 0,
-        height: '100vh',
-        overflowY: 'auto',
-        WebkitOverflowScrolling: 'touch',
-        paddingBottom: '4rem',
+        position: 'relative',
+        top: 'auto',
+        left: 'auto',
+        transform: 'none',
+        minHeight: '100vh',
       }),
     }}>
       {/* Stacked Carousel */}
       <div style={{
         flexShrink: 0,
-        paddingTop: isMobile ? '480px' : '13rem',
+        paddingTop: isMobile ? '0' : '13rem',
         marginLeft: isMobile ? '0' : '-10rem',
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
-        transform: isMobile ? 'scale(0.85)' : 'scale(1)',
+        transform: isMobile ? 'scale(0.8)' : 'scale(1)',
+        width: isMobile ? '100%' : 'auto',
       }}>
         <div style={{
           fontSize: '0.0001rem',
-          marginLeft: isMobile ? '-14rem' : '3rem',
-          marginBottom: isMobile ? '-0.6rem' : '0.5rem',
+          marginLeft: isMobile ? '-10rem' : '3rem',
+          marginBottom: isMobile ? '1rem' : '0.5rem',
         }}>
           <PhotoLabel count={5} />
         </div>
@@ -72,13 +69,13 @@ export default function About() {
         flex: 1,
         width: isMobile ? '100%' : 'auto',
         maxWidth: isMobile ? '100%' : 'none',
-        padding: isMobile ? '0 1rem' : '0',
+        padding: isMobile ? '0 2rem' : '0',
       }}>
         <div style={{
           fontFamily: "'relationship of melodrame', serif",
           fontSize: isMobile ? '2rem' : '2.5rem',
           textAlign: isMobile ? 'center' : 'left',
-          marginTop: isMobile ? '-5rem' : '13rem',
+          marginTop: isMobile ? '0' : '13rem',
           marginBottom: isMobile ? '1.5rem' : '2rem',
         }}>
           welcome!

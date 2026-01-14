@@ -56,7 +56,12 @@ function App() {
   }, [currentPage]);
 
   return (
-    <div className="app">
+    <div className="app" style={{
+      ...(isMobile && currentPage === 'about' && {
+        overflow: 'auto',
+        height: '100vh',
+      }),
+    }}>
       {/* Initial page load overlay */}
       <div style={{
         position: 'fixed',
