@@ -15,7 +15,7 @@ function Dock({ currentPage, setCurrentPage }) {
 
   return (
     <nav style={{
-      position: 'fixed',
+      position: currentPage === 'about' ? 'absolute' : 'fixed',
       top: '2rem',
       ...(isMobile ? {
         left: '50%',

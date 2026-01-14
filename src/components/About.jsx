@@ -109,6 +109,7 @@ export default function About() {
         {isMobile && (
           <div style={{
             marginTop: '3rem',
+            marginBottom: '5rem',
             textAlign: 'center',
             fontSize: '0.75rem',
             color: '#888',
