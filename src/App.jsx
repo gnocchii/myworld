@@ -57,8 +57,8 @@ function App() {
 
   return (
     <div className="app" style={{
-      ...(isMobile && currentPage === 'about' && {
-        overflow: 'auto',
+      ...(currentPage === 'about' && {
+        overflow: isMobile ? 'auto' : 'hidden',
         height: '100vh',
       }),
     }}>

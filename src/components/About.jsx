@@ -25,34 +25,37 @@ export default function About() {
 
   return (
     <main className="content" style={{
+      position: 'relative',
+      top: 'auto',
+      left: 'auto',
+      transform: 'none',
       display: 'flex',
       flexDirection: isMobile ? 'column' : 'row',
-      alignItems: isMobile ? 'center' : 'flex-start',
-      justifyContent: isMobile ? 'flex-start' : 'center',
-      padding: isMobile ? '4rem 2rem 1rem 2rem' : '2rem',
-      maxWidth: isMobile ? '100%' : '1100px',
+      alignItems: isMobile ? 'center' : 'center',
+      justifyContent: 'center',
+      padding: '4rem 2rem 2rem 2rem',
+      maxWidth: '1200px',
+      width: '100%',
       margin: '0 auto',
       gap: isMobile ? '2rem' : '3rem',
-      ...(isMobile && {
-        position: 'relative',
-        top: 'auto',
-        left: 'auto',
-        transform: 'none',
-        minHeight: '100vh',
-      }),
+      transition: 'padding 0.3s ease',
+      minHeight: '100vh',
+      boxSizing: 'border-box',
     }}>
       {/* Stacked Carousel */}
       <div style={{
         flexShrink: 0,
-        paddingTop: isMobile ? '0' : '13rem',
-        marginLeft: isMobile ? '0' : '-10rem',
+        paddingTop: isMobile ? '0' : '0',
+        marginLeft: isMobile ? '0' : '0',
         transform: isMobile ? 'scale(0.8)' : 'scale(1)',
         width: isMobile ? '100%' : 'auto',
+        maxWidth: isMobile ? '100%' : '400px',
         position: 'relative',
+        transition: 'all 0.3s ease',
       }}>
         <div style={{
           position: 'absolute',
-          top: isMobile ? '-0.3rem': '12.8rem',
+          top: isMobile ? '-0.3rem': '-0.3rem',
           left: '3.1rem',
           zIndex: 100,
         }}>
@@ -67,15 +70,17 @@ export default function About() {
         color: '#272622',
         flex: 1,
         width: isMobile ? '100%' : 'auto',
-        maxWidth: isMobile ? '100%' : 'none',
-        padding: isMobile ? '0 2rem' : '0',
+        maxWidth: isMobile ? '100%' : '600px',
+        padding: '0',
+        transition: 'all 0.3s ease',
       }}>
         <div style={{
           fontFamily: "'relationship of melodrame', serif",
           fontSize: isMobile ? '2rem' : '2.5rem',
           textAlign: isMobile ? 'center' : 'left',
-          marginTop: isMobile ? '0' : '13rem',
+          marginTop: '0',
           marginBottom: isMobile ? '1.5rem' : '1rem',
+          transition: 'all 0.3s ease',
         }}>
           Welcome!
         </div>

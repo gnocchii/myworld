@@ -111,17 +111,11 @@ export default function LetterboxdFolder({ startX, startY, rotation = 5 }) {
       {/* Opened folder popup */}
       <div
         style={{
-          position: isMobile ? 'fixed' : 'absolute',
-          ...(isMobile ? {
-            top: '50%',
-            left: '50%',
-            transform: isOpen ? 'translate(-50%, -50%) scale(1)' : 'translate(-50%, -50%) scale(0)',
-          } : {
-            top: '110%',
-            left: '8%',
-            transform: isOpen ? 'scale(1)' : 'scale(0)',
-          }),
-          transformOrigin: '0% -30%',
+          position: 'absolute',
+          top: '110%',
+          right: '8%',
+          transformOrigin: '100% -30%',
+          transform: isOpen ? (isMobile ? 'scale(0.75)' : 'scale(1)') : 'scale(0)',
           backgroundColor: 'rgba(255, 255, 255, 0.8)',
           backdropFilter: 'blur(16px)',
           color: '#404040',
@@ -131,7 +125,7 @@ export default function LetterboxdFolder({ startX, startY, rotation = 5 }) {
           transition: 'all 0.2s ease',
           opacity: isOpen ? 1 : 0,
           pointerEvents: isOpen ? 'auto' : 'none',
-          zIndex: isMobile ? 1000 : 'auto',
+          zIndex: 60,
         }}
       >
         {/* Window header bar */}

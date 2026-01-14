@@ -5,7 +5,7 @@ export default function AnimatedTitle() {
   const [currentImage, setCurrentImage] = useState(0);
   const [isMobile, setIsMobile] = useState(false); // Start false for SSR safety
   const { status } = useAudio();
-  const images = ['/images/rom.png', '/images/kunanyi.PNG', '/images/name.png', '/images/brat.png', '/images/pencil.png'];
+  const images = ['/images/rom.png', '/images/kunanyi.PNG', '/images/brat.png', '/images/pencil.png'];
 
   useEffect(() => {
     // Set initial state and handle resize
@@ -21,7 +21,7 @@ export default function AnimatedTitle() {
     let interval;
     if (status === 'playing') {
       interval = setInterval(() => {
-        setCurrentImage((prev) => (prev + 1) % 5);
+        setCurrentImage((prev) => (prev + 1) % 4);
       }, 2000);
     }
     return () => { if (interval) clearInterval(interval); };
@@ -29,9 +29,8 @@ export default function AnimatedTitle() {
 
   const currentImageSrc = images[currentImage];
   const isPaper = currentImageSrc === '/images/paper.png';
-  const isName = currentImageSrc === '/images/name.png';
   const isKun = currentImageSrc === '/images/kunanyi.PNG';
-  
+
   return (
     <div style={{
       position: 'absolute',
@@ -44,8 +43,6 @@ export default function AnimatedTitle() {
       pointerEvents: 'none',
       transform: isPaper
         ? `translate(-50%, -50%) scale(${isMobile ? 1 : 1.3})`
-        : isName
-        ? `translate(-50%, -54%) scale(${isMobile ? 0.7 : 1.5})`
         : 'translate(-50%, -50%)',
       transition: 'top 0.3s ease',
     }}>

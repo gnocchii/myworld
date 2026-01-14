@@ -113,9 +113,10 @@ export default function Folder({ title, startX, startY, rotation = 0 }) {
           borderRadius: '6px',
           width: '288px',
           transition: 'all 0.2s ease',
-          transform: isOpen ? 'scale(1)' : 'scale(0)',
+          transform: isOpen ? (isMobile ? 'scale(0.75)' : 'scale(1)') : 'scale(0)',
           opacity: isOpen ? 1 : 0,
           pointerEvents: isOpen ? 'auto' : 'none',
+          zIndex: 60,
         }}
       >
         {/* Window header bar */}
