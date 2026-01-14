@@ -42,7 +42,7 @@ export default function ContactsFolder({ startX, startY, rotation = 0 }) {
   ];
 
   useEffect(() => {
-    if (folderRef.current) {
+    if (folderRef.current && !isMobile) {
       gsap.set(folderRef.current, { x: 0, y: 0 });
       Draggable.create(folderRef.current, {
         type: "x,y",
@@ -52,7 +52,7 @@ export default function ContactsFolder({ startX, startY, rotation = 0 }) {
         dragClickables: false,
       });
     }
-  }, []);
+  }, [isMobile]);
 
   const toggleFolder = () => {
     setIsOpen(!isOpen);
@@ -111,12 +111,16 @@ export default function ContactsFolder({ startX, startY, rotation = 0 }) {
       {/* Opened folder popup */}
       <div
         style={{
-          position: 'absolute',
-          top: isMobile ? '80px' : '110%',
-          ...(isMobile
-            ? { left: '-2%', transform: isOpen ? 'translateX(-50%) scale(1)' : 'translateX(-50%) scale(0)' }
-            : { left: '8%', transform: isOpen ? 'scale(1)' : 'scale(0)' }
-          ),
+          position: isMobile ? 'fixed' : 'absolute',
+          ...(isMobile ? {
+            top: '50%',
+            left: '50%',
+            transform: isOpen ? 'translate(-50%, -50%) scale(1)' : 'translate(-50%, -50%) scale(0)',
+          } : {
+            top: '110%',
+            left: '8%',
+            transform: isOpen ? 'scale(1)' : 'scale(0)',
+          }),
           transformOrigin: isMobile ? 'center' : '0% -30%',
           backgroundColor: 'rgba(255, 255, 255, 0.8)',
           backdropFilter: 'blur(16px)',
@@ -132,6 +136,7 @@ export default function ContactsFolder({ startX, startY, rotation = 0 }) {
           fontWeight: 300,
           textAlign: 'center',
           whiteSpace: 'nowrap',
+          zIndex: isMobile ? 1000 : 'auto',
         }}
       >
         {/* Window header bar */}

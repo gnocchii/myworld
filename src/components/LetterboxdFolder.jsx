@@ -40,7 +40,7 @@ export default function LetterboxdFolder({ startX, startY, rotation = 5 }) {
     handleResize();
     window.addEventListener('resize', handleResize);
 
-    if (folderRef.current) {
+    if (folderRef.current && !isMobile) {
       gsap.set(folderRef.current, { x: 0, y: 0 });
       Draggable.create(folderRef.current, {
         type: "x,y",
@@ -52,7 +52,7 @@ export default function LetterboxdFolder({ startX, startY, rotation = 5 }) {
     }
 
     return () => window.removeEventListener('resize', handleResize);
-  }, []);
+  }, [isMobile]);
 
   const toggleFolder = () => {
     setIsOpen(!isOpen);
@@ -111,9 +111,16 @@ export default function LetterboxdFolder({ startX, startY, rotation = 5 }) {
       {/* Opened folder popup */}
       <div
         style={{
-          position: 'absolute',
-          top: isMobile? '22%':'110%',
-          left: isMobile? '29%':'8%',
+          position: isMobile ? 'fixed' : 'absolute',
+          ...(isMobile ? {
+            top: '50%',
+            left: '50%',
+            transform: isOpen ? 'translate(-50%, -50%) scale(1)' : 'translate(-50%, -50%) scale(0)',
+          } : {
+            top: '110%',
+            left: '8%',
+            transform: isOpen ? 'scale(1)' : 'scale(0)',
+          }),
           transformOrigin: '0% -30%',
           backgroundColor: 'rgba(255, 255, 255, 0.8)',
           backdropFilter: 'blur(16px)',
@@ -122,9 +129,9 @@ export default function LetterboxdFolder({ startX, startY, rotation = 5 }) {
           borderRadius: '6px',
           width: '240px',
           transition: 'all 0.2s ease',
-          transform: isOpen ? 'scale(1)' : 'scale(0)',
           opacity: isOpen ? 1 : 0,
           pointerEvents: isOpen ? 'auto' : 'none',
+          zIndex: isMobile ? 1000 : 'auto',
         }}
       >
         {/* Window header bar */}

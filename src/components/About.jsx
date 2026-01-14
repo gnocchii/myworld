@@ -29,7 +29,7 @@ export default function About() {
       flexDirection: isMobile ? 'column' : 'row',
       alignItems: isMobile ? 'center' : 'flex-start',
       justifyContent: isMobile ? 'flex-start' : 'center',
-      padding: isMobile ? '8rem 2rem 4rem 2rem' : '2rem',
+      padding: isMobile ? '4rem 2rem 1rem 2rem' : '2rem',
       maxWidth: isMobile ? '100%' : '1100px',
       margin: '0 auto',
       gap: isMobile ? '2rem' : '3rem',
@@ -46,16 +46,15 @@ export default function About() {
         flexShrink: 0,
         paddingTop: isMobile ? '0' : '13rem',
         marginLeft: isMobile ? '0' : '-10rem',
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
         transform: isMobile ? 'scale(0.8)' : 'scale(1)',
         width: isMobile ? '100%' : 'auto',
+        position: 'relative',
       }}>
         <div style={{
-          fontSize: '0.0001rem',
-          marginLeft: isMobile ? '-10rem' : '3rem',
-          marginBottom: isMobile ? '1rem' : '0.5rem',
+          position: 'absolute',
+          top: isMobile ? '-0.3rem': '12.8rem',
+          left: '3.1rem',
+          zIndex: 100,
         }}>
           <PhotoLabel count={5} />
         </div>
@@ -76,9 +75,9 @@ export default function About() {
           fontSize: isMobile ? '2rem' : '2.5rem',
           textAlign: isMobile ? 'center' : 'left',
           marginTop: isMobile ? '0' : '13rem',
-          marginBottom: isMobile ? '1.5rem' : '2rem',
+          marginBottom: isMobile ? '1.5rem' : '1rem',
         }}>
-          welcome!
+          Welcome!
         </div>
         <div style={{
           fontSize: '0.8rem',
@@ -86,9 +85,9 @@ export default function About() {
           textAlign: isMobile ? 'center' : 'left',
         }}>
           <p style={{ marginBottom: '2rem' }}>
-            Hey! I'm Melody, a software engineer passionate about creating
+            Hey! I'm Melody, so excited you're here! I'm a programmer passionate about creating
             meaningful digital experiences at the intersection of creativity and technology.
-            I believe in the power of design to tell stories and connect people.
+            I believe in the power of thoughtful design.
           </p>
 
           <p style={{ marginBottom: '2rem' }}>
@@ -97,9 +96,22 @@ export default function About() {
           </p>
 
           <p style={{ marginBottom: '2rem' }}>
-            Outside of work you can find me milking my music taste, at the cinema, playing Celeste, skiing, sightreading Rachmaninoff, or destroying my digestive tracts with spicy snacks and kombucha!
+            Outside of work you can find me milking my music taste, at the cinema, skiing, sightreading Rachmaninoff, or destroying my digestive tracts with spicy snacks and kombucha!
           </p>
         </div>
+
+        {/* Footer */}
+        {isMobile && (
+          <div style={{
+            marginTop: '3rem',
+            textAlign: 'center',
+            fontSize: '0.75rem',
+            color: '#888',
+            fontFamily: "'Roboto Mono', monospace",
+          }}>
+            made with &lt;3
+          </div>
+        )}
       </div>
     </main>
   );
