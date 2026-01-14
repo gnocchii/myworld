@@ -82,7 +82,7 @@ export default function LetterboxdFolder({ startX, startY, rotation = 5 }) {
         position: 'absolute',
         left: isMobile ? '62%' :startX,
         top: isMobile ? '38%' : startY,
-        zIndex: 30,
+        zIndex: isOpen ? 120 : 30,
         transition: 'all 0.2s',
       }}
     >
@@ -125,7 +125,7 @@ export default function LetterboxdFolder({ startX, startY, rotation = 5 }) {
           transition: 'all 0.2s ease',
           opacity: isOpen ? 1 : 0,
           pointerEvents: isOpen ? 'auto' : 'none',
-          zIndex: 60,
+          zIndex: 120,
         }}
       >
         {/* Window header bar */}

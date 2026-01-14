@@ -78,7 +78,7 @@ export default function About() {
           fontFamily: "'relationship of melodrame', serif",
           fontSize: isMobile ? '2rem' : '2.5rem',
           textAlign: isMobile ? 'center' : 'left',
-          marginTop: '0',
+          marginTop: isMobile ? '-2rem' : '0rem',
           marginBottom: isMobile ? '1.5rem' : '1rem',
           transition: 'all 0.3s ease',
         }}>

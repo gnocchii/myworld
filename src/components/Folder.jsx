@@ -34,16 +34,22 @@ export default function Folder({ title, startX, startY, rotation = 0 }) {
       setIsMobile(window.innerWidth <= 768);
     };
 
-    if (folderRef.current) {
+    handleResize();
+    window.addEventListener('resize', handleResize);
+
+    if (folderRef.current && !isMobile) {
       gsap.set(folderRef.current, { x: 0, y: 0 });
       Draggable.create(folderRef.current, {
         type: "x,y",
         bounds: document.body,
         inertia: true,
         zIndexBoost: true,
+        dragClickables: false,
       });
     }
-  }, []);
+
+    return () => window.removeEventListener('resize', handleResize);
+  }, [isMobile]);
 
   const toggleFolder = () => {
     setIsOpen(!isOpen);
@@ -73,7 +79,7 @@ export default function Folder({ title, startX, startY, rotation = 0 }) {
         position: 'absolute',
         left: isMobile? '18.8%':startX,
         top: isMobile? '47%':startY,
-        zIndex: 30,
+        zIndex: isOpen ? 120 : 30,
         transition: 'all 0.2s',
       }}
     >
@@ -116,7 +122,7 @@ export default function Folder({ title, startX, startY, rotation = 0 }) {
           transform: isOpen ? (isMobile ? 'scale(0.75)' : 'scale(1)') : 'scale(0)',
           opacity: isOpen ? 1 : 0,
           pointerEvents: isOpen ? 'auto' : 'none',
-          zIndex: 60,
+          zIndex: 120,
         }}
       >
         {/* Window header bar */}

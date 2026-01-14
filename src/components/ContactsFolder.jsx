@@ -82,7 +82,7 @@ export default function ContactsFolder({ startX, startY, rotation = 0 }) {
         position: 'absolute',
         left: isMobile? '63.7%' : startX,
         top: isMobile? '56.3%' :startY,
-        zIndex: 30,
+        zIndex: isOpen ? 120 : 30,
         transition: 'all 0.2s',
       }}
     >
@@ -130,7 +130,7 @@ export default function ContactsFolder({ startX, startY, rotation = 0 }) {
           fontWeight: 300,
           textAlign: 'center',
           whiteSpace: 'nowrap',
-          zIndex: 60,
+          zIndex: 120,
         }}
       >
         {/* Window header bar */}
