@@ -83,7 +83,7 @@ export default function ContactsFolder({ startX, startY, rotation = 0 }) {
         left: isMobile? '63.7%' : startX,
         top: isMobile? '56.3%' :startY,
         zIndex: isOpen ? 120 : 30,
-        transition: 'all 0.2s',
+        transition: 'z-index 0.2s',
       }}
     >
       <div

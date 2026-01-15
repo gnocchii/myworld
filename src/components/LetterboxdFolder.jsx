@@ -83,7 +83,7 @@ export default function LetterboxdFolder({ startX, startY, rotation = 5 }) {
         left: isMobile ? '62%' :startX,
         top: isMobile ? '38%' : startY,
         zIndex: isOpen ? 120 : 30,
-        transition: 'all 0.2s',
+        transition: 'z-index 0.2s',
       }}
     >
       <div

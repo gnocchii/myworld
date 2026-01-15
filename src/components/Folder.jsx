@@ -80,7 +80,7 @@ export default function Folder({ title, startX, startY, rotation = 0 }) {
         left: isMobile? '18.8%':startX,
         top: isMobile? '47%':startY,
         zIndex: isOpen ? 120 : 30,
-        transition: 'all 0.2s',
+        transition: 'z-index 0.2s',
       }}
     >
       <div
