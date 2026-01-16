@@ -5,7 +5,6 @@ import CDPlayer from './components/CDPlayer'
 import AudioPlayer from './components/AudioPlayer'
 import DraggableSticker from './components/DraggableSticker'
 import Folder from './components/Folder'
-import Photobooth from './components/Photobooth'
 import LetterboxdFolder from './components/LetterboxdFolder'
 import ContactsFolder from './components/ContactsFolder'
 import About from './components/About'
@@ -140,14 +139,6 @@ function App() {
           <LetterboxdFolder
             startX="67%"
             startY="22%"
-            rotation={0}
-          />
-
-          <Photobooth
-            width={79}
-            height={79}
-            startX="62%"
-            startY="26%"
             rotation={0}
           />
 
