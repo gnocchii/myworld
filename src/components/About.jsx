@@ -92,7 +92,7 @@ export default function About() {
           <p style={{ marginBottom: '2rem' }}>
             Hey! I'm Melody, so excited you're here! I'm a programmer passionate about creating
             meaningful digital experiences at the intersection of creativity and technology.
-            I believe in the power of thoughtful design.
+            I believe in the power of thoughtful design and tasteful tinkering.
           </p>
 
           <p style={{ marginBottom: '2rem' }}>
