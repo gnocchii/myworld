@@ -122,28 +122,37 @@ function App() {
           </div>
           <Folder
             title="photos"
-            startX="27.8%"
-            startY="46%"
+            startX="71.2%"
+            startY="36.6%"
             rotation={0}
           />
 
-          <Photobooth
-            width={150}
-            height={150}
-            startX="73%"
-            startY="54%"
+          <Folder
+            title="photos"
+            startX="29.6%"
+            startY="43%"
             rotation={0}
           />
+
+          {!isMobile && (
+            <Photobooth
+              width={88}
+              height={88}
+              startX="24.2%"
+              startY="29.9%"
+              rotation={0}
+            />
+          )}
 
           <LetterboxdFolder
-            startX="67%"
-            startY="22%"
+            startX="66.1%"
+            startY="24.6%"
             rotation={0}
           />
 
           <ContactsFolder
-            startX="66.7%"
-            startY="54.3%"
+            startX="64.1%"
+            startY="46.5%"
             rotation={0}
           />
 

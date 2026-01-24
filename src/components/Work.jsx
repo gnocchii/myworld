@@ -39,7 +39,7 @@ export default function Work() {
           <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem', width: '100%' }}>
             <div style={{ flex: 0.5 }}>
               <h3 style={{ fontSize: '1.25rem', fontWeight: 600, marginBottom: '0.5rem' }}>Opal</h3>
-              <p style={{ color: '#6b7280', fontSize: '0.9rem' }}>Project description</p>
+              <p style={{ color: '#6b7280', fontSize: '0.9rem' }}>built @ Nexhacks 2026</p>
             </div>
             <div style={{ flex: 2 }}>
               <img
@@ -54,7 +54,7 @@ export default function Work() {
           <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem', width: '100%' }}>
             <div style={{ flex: 0.5 }}>
               <h3 style={{ fontSize: '1.25rem', fontWeight: 600, marginBottom: '0.5rem' }}>Darwin</h3>
-              <p style={{ color: '#6b7280', fontSize: '0.9rem' }}>Project description</p>
+              <p style={{ color: '#6b7280', fontSize: '0.9rem' }}>winner @ Calhacks 2025</p>
             </div>
             <div style={{ flex: 2 }}>
               <img

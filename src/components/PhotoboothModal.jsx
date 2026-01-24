@@ -64,7 +64,7 @@ export default function PhotoboothModal({ isOpen, onClose }) {
     setPhotos([]);
     setShowPhotoStrip(false);
     setIsPrinting(false);
-    setStripColor("white");
+    setStripColor("black");
     setActiveFilter("none");
     setPlacedStickers([]);
   };
@@ -605,6 +605,7 @@ export default function PhotoboothModal({ isOpen, onClose }) {
                     flexShrink: 0,
                     position: "relative",
                     alignSelf: "flex-start",
+                    marginTop: "-10px",
                     userSelect: "none",
                   }}
                 >
@@ -919,18 +920,18 @@ export default function PhotoboothModal({ isOpen, onClose }) {
                   <div style={{ flex: 1 }} />
 
                   {/* Action Buttons */}
-                  <div style={{ display: "flex", gap: "12px" }}>
+                  <div style={{ display: "flex", gap: "10px" }}>
                     <button
                       onClick={retakePhotos}
                       style={{
                         flex: 1,
-                        padding: "12px 20px",
+                        padding: "8px 14px",
                         backgroundColor: "#fff",
                         color: "#333",
-                        border: "2px solid #ddd",
-                        borderRadius: "8px",
-                        fontSize: "14px",
-                        fontWeight: 600,
+                        border: "1px solid #ddd",
+                        borderRadius: "6px",
+                        fontSize: "12px",
+                        fontWeight: 500,
                         cursor: "pointer",
                         fontFamily: "'SF Pro', -apple-system, sans-serif",
                       }}
@@ -941,16 +942,15 @@ export default function PhotoboothModal({ isOpen, onClose }) {
                       onClick={downloadPhotoStrip}
                       style={{
                         flex: 1,
-                        padding: "12px 20px",
+                        padding: "8px 14px",
                         backgroundColor: "#007aff",
                         color: "white",
                         border: "none",
-                        borderRadius: "8px",
-                        fontSize: "14px",
-                        fontWeight: 600,
+                        borderRadius: "6px",
+                        fontSize: "12px",
+                        fontWeight: 500,
                         cursor: "pointer",
                         fontFamily: "'SF Pro', -apple-system, sans-serif",
-                        boxShadow: "0 2px 8px rgba(0, 122, 255, 0.3)",
                       }}
                     >
                       Export
@@ -970,7 +970,8 @@ export default function PhotoboothModal({ isOpen, onClose }) {
                 <div style={{ display: "flex", gap: "12px" }}>
                   {/* Flash Toggle */}
                   <button
-                    onClick={() => setFlashEnabled(!flashEnabled)}
+                    onClick={() => !isCapturing && setFlashEnabled(!flashEnabled)}
+                    disabled={isCapturing}
                     style={{
                       padding: "8px 16px",
                       backgroundColor: flashEnabled ? "#fff" : "#f5f5f5",
@@ -979,8 +980,9 @@ export default function PhotoboothModal({ isOpen, onClose }) {
                       borderRadius: "6px",
                       fontSize: "13px",
                       fontWeight: 500,
-                      cursor: "pointer",
+                      cursor: isCapturing ? "not-allowed" : "pointer",
                       fontFamily: "'SF Pro', -apple-system, sans-serif",
+                      opacity: isCapturing ? 0.5 : 1,
                     }}
                   >
                     Flash
@@ -988,7 +990,8 @@ export default function PhotoboothModal({ isOpen, onClose }) {
 
                   {/* Mirror Toggle */}
                   <button
-                    onClick={() => setMirrorMode(!mirrorMode)}
+                    onClick={() => !isCapturing && setMirrorMode(!mirrorMode)}
+                    disabled={isCapturing}
                     style={{
                       padding: "8px 16px",
                       backgroundColor: mirrorMode ? "#fff" : "#f5f5f5",
@@ -997,8 +1000,9 @@ export default function PhotoboothModal({ isOpen, onClose }) {
                       borderRadius: "6px",
                       fontSize: "13px",
                       fontWeight: 500,
-                      cursor: "pointer",
+                      cursor: isCapturing ? "not-allowed" : "pointer",
                       fontFamily: "'SF Pro', -apple-system, sans-serif",
+                      opacity: isCapturing ? 0.5 : 1,
                     }}
                   >
                     Mirror
