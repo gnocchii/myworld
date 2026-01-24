@@ -18,8 +18,8 @@ export function AudioProvider({ children }) {
     },
     {
       image: cascade,
-      name: "FAST FORWARD",
-      alt: "Crush",
+      name: "CASCADE",
+      alt: "Cascade",
       audio: "/audios/Fast Forward.mp3",
     },
     {

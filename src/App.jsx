@@ -3,10 +3,10 @@ import Scene from './components/Scene'
 import Dock from './components/Dock'
 import CDPlayer from './components/CDPlayer'
 import AudioPlayer from './components/AudioPlayer'
-import DraggableSticker from './components/DraggableSticker'
 import Folder from './components/Folder'
 import LetterboxdFolder from './components/LetterboxdFolder'
 import ContactsFolder from './components/ContactsFolder'
+import Photobooth from './components/Photobooth'
 import About from './components/About'
 import Work from './components/Work'
 import Play from './components/Play'
@@ -127,14 +127,13 @@ function App() {
             rotation={0}
           />
 
-          {/* <DraggableSticker
-            src="/images/kiko folder.png"
+          <Photobooth
             width={150}
             height={150}
             startX="73%"
             startY="54%"
-            rotation={8}
-          /> */}
+            rotation={0}
+          />
 
           <LetterboxdFolder
             startX="67%"

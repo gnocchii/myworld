@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import gsap from "gsap";
 import { Draggable } from "gsap/Draggable";
+import PhotoboothModal from "./PhotoboothModal";
 
 export default function Photobooth({
   width = 120,
@@ -11,6 +12,7 @@ export default function Photobooth({
 }) {
   const stickerRef = useRef(null);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   useEffect(() => {
     const handleResize = () => {
@@ -34,38 +36,43 @@ export default function Photobooth({
   }, [isMobile]);
 
   return (
-    <div
-      ref={stickerRef}
-      style={{
-        position: "absolute",
-        left: isMobile ? '18%' : startX,
-        top: isMobile ? '38%' : startY,
-        transform: `rotate(${rotation}deg)`,
-        cursor: isMobile ? "default" : "grab",
-        zIndex: 10,
-      }}
-      onMouseDown={(e) => {
-        if (!isMobile) {
-          e.currentTarget.style.cursor = "grabbing";
-        }
-      }}
-      onMouseUp={(e) => {
-        if (!isMobile) {
-          e.currentTarget.style.cursor = "grab";
-        }
-      }}
-    >
-      <img
-        src="/images/photobooth.webp"
-        alt="photobooth"
-        width={isMobile ? Math.round(width * 0.67) : width}
-        height={isMobile ? Math.round(height * 0.67) : height}
-        draggable={false}
+    <>
+      <div
+        ref={stickerRef}
         style={{
-          cursor: "inherit",
-          userSelect: "none",
+          position: "absolute",
+          left: isMobile ? '18%' : startX,
+          top: isMobile ? '38%' : startY,
+          transform: `rotate(${rotation}deg)`,
+          cursor: isMobile ? "default" : "grab",
+          zIndex: 10,
         }}
-      />
-    </div>
+        onMouseDown={(e) => {
+          if (!isMobile) {
+            e.currentTarget.style.cursor = "grabbing";
+          }
+        }}
+        onMouseUp={(e) => {
+          if (!isMobile) {
+            e.currentTarget.style.cursor = "grab";
+          }
+        }}
+      >
+        <img
+          src="/images/photobooth.webp"
+          alt="photobooth"
+          width={isMobile ? Math.round(width * 0.67) : width}
+          height={isMobile ? Math.round(height * 0.67) : height}
+          draggable={false}
+          onClick={() => setIsModalOpen(true)}
+          style={{
+            cursor: "pointer",
+            userSelect: "none",
+          }}
+        />
+      </div>
+
+      <PhotoboothModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+    </>
   );
 }

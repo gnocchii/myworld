@@ -30,7 +30,7 @@ function CD() {
 
   const cdSize = isMobile ? 275 : 475;
   const containerWidth = isMobile ? "100%" : "700px";
-  const statusTop = isMobile ? "59px" : "-60px";
+  const statusTop = isMobile ? "59px" : "-40px";
   const statusFontSize = isMobile ? "0.7rem" : "0.9rem";
   const cdTop = isMobile ? "86px" : "0";
 
