@@ -44,17 +44,6 @@ function App() {
     return () => clearTimeout(timer);
   }, []);
 
-  useEffect(() => {
-    // Trigger fade in when navigating to about page
-    if (currentPage === 'about') {
-      setFadeOut(false);
-      const timer = setTimeout(() => {
-        setFadeOut(true);
-      }, 100);
-      return () => clearTimeout(timer);
-    }
-  }, [currentPage]);
-
   return (
     <div className="app" style={{
       ...(currentPage === 'about' && {
@@ -81,23 +70,23 @@ function App() {
       <div className="overlay">
         <Dock currentPage={currentPage} setCurrentPage={setCurrentPage} />
 
-        <div style={{ display: currentPage === 'home' ? 'block' : 'none' }}>
-          <CDPlayer />
-
-          {/* Local Time Display */}
-          <div style={{
-            position: 'fixed',
-            top: isMobile ? '5rem' : '4rem',
-            left: '50%',
-            transform: 'translateX(-50%)',
-            zIndex: 100,
-            fontFamily: "'SF Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
-            color: '#1d1d1f',
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-            gap: '0.5rem',
-          }}>
+        {/* Local Time Display - Outside animated container to preserve fixed positioning */}
+        {currentPage === 'home' && (
+          <div
+            className="home-fade-in"
+            style={{
+              position: 'fixed',
+              top: isMobile ? '5rem' : '4rem',
+              left: '50%',
+              transform: 'translateX(-50%)',
+              zIndex: 100,
+              fontFamily: "'SF Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+              color: '#1d1d1f',
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              gap: '0.5rem',
+            }}>
             <div style={{
               fontSize: isMobile ? '1rem' : '1.2rem',
               fontWeight: 600,
@@ -120,6 +109,18 @@ function App() {
               })}
             </div>
           </div>
+        )}
+
+        {currentPage === 'home' && (
+          <div
+            key="home"
+            className="page-fade-in"
+            style={{
+              position: 'absolute',
+              inset: 0,
+            }}
+          >
+          <CDPlayer />
           <Folder
             title="photos"
             startX="71.2%"
@@ -182,10 +183,28 @@ function App() {
             </div>
            </main> */}
         </div>
-
-        {currentPage === 'about' && <About />}
-        {currentPage === 'work' && <Work />}
-        {currentPage === 'play' && <Play />}
+        )}
+        {currentPage === 'about' && (
+          <div
+            key="about"
+            className="page-fade-in"
+          >
+            <About />
+          </div>
+        )}
+        {currentPage === 'work' && (
+          <div
+            key="work"
+            className="page-fade-in"
+          >
+            <Work />
+          </div>
+        )}
+        {currentPage === 'play' && (
+          <div key="play">
+            <Play />
+          </div>
+        )}
       </div>
     </div>
   )

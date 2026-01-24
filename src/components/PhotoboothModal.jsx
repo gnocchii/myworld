@@ -11,10 +11,10 @@ const STICKERS = [
 ];
 
 const STRIP_COLORS = [
-  { id: "black", color: "#1a1a1a", label: "Black" },
-  { id: "white", color: "#ffffff", label: "White" },
+  { id: "black", color: "#000000ff", label: "Black" },  
   { id: "cream", color: "#faf6f0", label: "Cream" },
-  { id: "pink", color: "#ffc0cb", label: "Pink" },
+  { id: "white", color: "#ffffff", label: "White" },
+  { id: "royal blue", color: "#5765f2", label: "Blue" },
   { id: "blue", color: "#add8e6", label: "Blue" },
   { id: "lavender", color: "#e6e6fa", label: "Lavender" },
 ];
@@ -465,24 +465,6 @@ export default function PhotoboothModal({ isOpen, onClose }) {
                   border: "0.5px solid #e0443e",
                 }}
               />
-              <div
-                style={{
-                  width: "12px",
-                  height: "12px",
-                  borderRadius: "50%",
-                  backgroundColor: "#ffbd2e",
-                  border: "0.5px solid #dea123",
-                }}
-              />
-              <div
-                style={{
-                  width: "12px",
-                  height: "12px",
-                  borderRadius: "50%",
-                  backgroundColor: "#27c93f",
-                  border: "0.5px solid #1aab29",
-                }}
-              />
             </div>
             <div
               style={{
@@ -494,7 +476,7 @@ export default function PhotoboothModal({ isOpen, onClose }) {
             >
               Photobooth
             </div>
-            <div style={{ width: "60px" }} />
+            <div style={{ width: "12px" }} />
           </div>
 
           {/* Content Area */}
@@ -507,6 +489,7 @@ export default function PhotoboothModal({ isOpen, onClose }) {
               gap: "20px",
               flex: 1,
               overflow: "hidden",
+              position: "relative",
             }}
           >
             {/* Webcam Preview */}
@@ -916,47 +899,78 @@ export default function PhotoboothModal({ isOpen, onClose }) {
                     )}
                   </div>
 
-                  {/* Spacer */}
-                  <div style={{ flex: 1 }} />
-
-                  {/* Action Buttons */}
-                  <div style={{ display: "flex", gap: "10px" }}>
-                    <button
-                      onClick={retakePhotos}
-                      style={{
-                        flex: 1,
-                        padding: "8px 14px",
-                        backgroundColor: "#fff",
-                        color: "#333",
-                        border: "1px solid #ddd",
-                        borderRadius: "6px",
-                        fontSize: "12px",
-                        fontWeight: 500,
-                        cursor: "pointer",
-                        fontFamily: "'SF Pro', -apple-system, sans-serif",
-                      }}
-                    >
-                      Retake
-                    </button>
-                    <button
-                      onClick={downloadPhotoStrip}
-                      style={{
-                        flex: 1,
-                        padding: "8px 14px",
-                        backgroundColor: "#007aff",
-                        color: "white",
-                        border: "none",
-                        borderRadius: "6px",
-                        fontSize: "12px",
-                        fontWeight: 500,
-                        cursor: "pointer",
-                        fontFamily: "'SF Pro', -apple-system, sans-serif",
-                      }}
-                    >
-                      Export
-                    </button>
-                  </div>
                 </div>
+
+                {/* Retake - Camera Button (bottom center, same position as landing) */}
+                <button
+                  onClick={retakePhotos}
+                  style={{
+                    position: "absolute",
+                    bottom: "20px",
+                    left: "50%",
+                    transform: "translateX(-50%)",
+                    width: "64px",
+                    height: "64px",
+                    borderRadius: "50%",
+                    backgroundColor: "rgba(220, 220, 220, 0.15)",
+                    border: "3px solid rgba(200, 200, 200, 0.6)",
+                    cursor: "pointer",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    transition: "all 0.2s ease",
+                  }}
+                  title="Retake"
+                >
+                  <svg
+                    width="36"
+                    height="36"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="rgba(160, 160, 160, 0.9)"
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z" />
+                    <circle cx="12" cy="13" r="4" />
+                  </svg>
+                </button>
+
+                {/* Export - Bottom Right of Modal */}
+                <button
+                  onClick={downloadPhotoStrip}
+                  style={{
+                    position: "absolute",
+                    bottom: "20px",
+                    right: "20px",
+                    padding: "8px 12px",
+                    borderRadius: "8px",
+                    backgroundColor: "rgba(220, 220, 220, 0.15)",
+                    border: "2px solid rgba(200, 200, 200, 0.6)",
+                    cursor: "pointer",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    transition: "all 0.2s ease",
+                  }}
+                  title="Export"
+                >
+                  <svg
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="rgba(160, 160, 160, 0.9)"
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                    <polyline points="17 8 12 3 7 8" />
+                    <line x1="12" y1="3" x2="12" y2="15" />
+                  </svg>
+                </button>
               </>
             )}
 
@@ -1009,26 +1023,45 @@ export default function PhotoboothModal({ isOpen, onClose }) {
                   </button>
                 </div>
 
-                {/* Start Button */}
-                <button
-                  onClick={startPhotoSequence}
-                  disabled={isCapturing || !stream}
-                  style={{
-                    padding: "12px 40px",
-                    backgroundColor: isCapturing ? "#999" : "#007aff",
-                    color: "white",
-                    border: "none",
-                    borderRadius: "8px",
-                    fontSize: "15px",
-                    fontWeight: 600,
-                    cursor: isCapturing ? "not-allowed" : "pointer",
-                    fontFamily: "'SF Pro', -apple-system, sans-serif",
-                    boxShadow: "0 2px 8px rgba(0, 122, 255, 0.3)",
-                  }}
-                >
-                  {isCapturing ? "Taking Photos..." : "Start"}
-                </button>
               </div>
+            )}
+
+            {/* Camera Button - Fixed position at bottom center */}
+            {!showPhotoStrip && (
+              <button
+                onClick={startPhotoSequence}
+                disabled={isCapturing || !stream}
+                style={{
+                  position: "absolute",
+                  bottom: "20px",
+                  left: "50%",
+                  transform: "translateX(-50%)",
+                  width: "64px",
+                  height: "64px",
+                  borderRadius: "50%",
+                  backgroundColor: isCapturing ? "rgba(200, 200, 200, 0.2)" : "rgba(220, 220, 220, 0.15)",
+                  border: isCapturing ? "3px solid #ccc" : "3px solid rgba(200, 200, 200, 0.6)",
+                  cursor: isCapturing ? "not-allowed" : "pointer",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  transition: "all 0.2s ease",
+                }}
+              >
+                <svg
+                  width="36"
+                  height="36"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke={isCapturing ? "#bbb" : "rgba(160, 160, 160, 0.9)"}
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z" />
+                  <circle cx="12" cy="13" r="4" />
+                </svg>
+              </button>
             )}
           </div>
         </motion.div>
