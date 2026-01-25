@@ -11,16 +11,16 @@ const AudioContext = createContext();
 export function AudioProvider({ children }) {
   const allSongs = [
     {
-      image: nujabes,
-      name: "WORLD WITHOUT WORDS",
-      alt: "Nujabes",
-      audio: "/audios/world without words.mp3",
-    },
-    {
       image: cascade,
       name: "FAST FORWARD",
       alt: "Cascade",
       audio: "/audios/Fast Forward.mp3",
+    },
+    {
+      image: nujabes,
+      name: "WORLD WITHOUT WORDS",
+      alt: "Nujabes",
+      audio: "/audios/world without words.mp3",
     },
     {
       image: crumbling,
@@ -50,7 +50,7 @@ export function AudioProvider({ children }) {
 
   const [status, setStatus] = useState("paused");
   const [isClient, setIsClient] = useState(false);
-  const [currentSongIndex, setCurrentSongIndex] = useState(1);
+  const [currentSongIndex, setCurrentSongIndex] = useState(0);
 
   useEffect(() => {
     setIsClient(true);
@@ -60,7 +60,7 @@ export function AudioProvider({ children }) {
       if (savedIndex) {
         setCurrentSongIndex(parseInt(savedIndex, 10));
       } else {
-        setCurrentSongIndex(1);
+        setCurrentSongIndex(0);
       }
       if (savedStatus) {
         setStatus(savedStatus);

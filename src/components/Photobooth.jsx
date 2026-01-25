@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from "react";
+import { createPortal } from "react-dom";
 import gsap from "gsap";
 import { Draggable } from "gsap/Draggable";
 import PhotoboothModal from "./PhotoboothModal";
@@ -72,7 +73,10 @@ export default function Photobooth({
         />
       </div>
 
-      <PhotoboothModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+      {createPortal(
+        <PhotoboothModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />,
+        document.body
+      )}
     </>
   );
 }

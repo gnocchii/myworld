@@ -397,7 +397,8 @@ export default function PhotoboothModal({ isOpen, onClose }) {
           alignItems: "center",
           justifyContent: "center",
           zIndex: 10000,
-          backdropFilter: "blur(4px)",
+          backdropFilter: "blur(8px)",
+          WebkitBackdropFilter: "blur(8px)",
         }}
         onClick={onClose}
       >
@@ -1023,45 +1024,38 @@ export default function PhotoboothModal({ isOpen, onClose }) {
                   </button>
                 </div>
 
-              </div>
-            )}
-
-            {/* Camera Button - Fixed position at bottom center */}
-            {!showPhotoStrip && (
-              <button
-                onClick={startPhotoSequence}
-                disabled={isCapturing || !stream}
-                style={{
-                  position: "absolute",
-                  bottom: "20px",
-                  left: "50%",
-                  transform: "translateX(-50%)",
-                  width: "64px",
-                  height: "64px",
-                  borderRadius: "50%",
-                  backgroundColor: isCapturing ? "rgba(200, 200, 200, 0.2)" : "rgba(220, 220, 220, 0.15)",
-                  border: isCapturing ? "3px solid #ccc" : "3px solid rgba(200, 200, 200, 0.6)",
-                  cursor: isCapturing ? "not-allowed" : "pointer",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  transition: "all 0.2s ease",
-                }}
-              >
-                <svg
-                  width="36"
-                  height="36"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke={isCapturing ? "#bbb" : "rgba(160, 160, 160, 0.9)"}
-                  strokeWidth="1.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
+                {/* Camera Button */}
+                <button
+                  onClick={startPhotoSequence}
+                  disabled={isCapturing || !stream}
+                  style={{
+                    width: "64px",
+                    height: "64px",
+                    borderRadius: "50%",
+                    backgroundColor: isCapturing ? "rgba(200, 200, 200, 0.2)" : "rgba(220, 220, 220, 0.15)",
+                    border: isCapturing ? "3px solid #ccc" : "3px solid rgba(200, 200, 200, 0.6)",
+                    cursor: isCapturing ? "not-allowed" : "pointer",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    transition: "all 0.2s ease",
+                  }}
                 >
-                  <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z" />
-                  <circle cx="12" cy="13" r="4" />
-                </svg>
-              </button>
+                  <svg
+                    width="36"
+                    height="36"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke={isCapturing ? "#bbb" : "rgba(160, 160, 160, 0.9)"}
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z" />
+                    <circle cx="12" cy="13" r="4" />
+                  </svg>
+                </button>
+              </div>
             )}
           </div>
         </motion.div>
